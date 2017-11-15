@@ -4,14 +4,14 @@ Visualizing an ONNX Model
 To visualize an onnx model, we can use the [net drawer tool](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py). This tool takes in a serialized ONNX model and produces a directed graph representation. The graph contains this information:
 
 * Tensors
- * Input/output tensors
- * Intermediate tensors
+   * Input/output tensors
+   * Intermediate tensors
 * Ops
- * Op type
- * Op number
- * Input tensor names
- * Output tensor names
- * Docstrings (Pytorch exports stack traces here, so this is a good way to get your bearings about the network topology)
+   * Op type
+   * Op number
+   * Input tensor names
+   * Output tensor names
+   * Docstrings (Pytorch exports stack traces here, so this is a good way to get your bearings about the network topology)
 
 ## SqueezeNet Example
 
