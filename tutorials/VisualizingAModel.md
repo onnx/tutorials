@@ -198,5 +198,3 @@ This is the code that I used to create the exported model. You can put this into
                                    x,                       # model input (or a tuple for multiple inputs)
                                    "squeezenet.onnx",       # where to save the model (can be a file or file-like object)
                                    export_params=True)      # store the trained parameter weights inside the model file
-
-#### Using net_drawer to create a 
