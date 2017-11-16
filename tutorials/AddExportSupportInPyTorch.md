@@ -28,12 +28,12 @@ importer (such as onnx-caffe2) developers, more work is needed.
 ## How to add the support to export an operator in PyTorch
 ### Condition 1: If the operator in PyTorch is an ATen operator.
 To determine whether the operator is an ATen operator or not, please check
-`torch/csrc/autograd/generated/VariableType.h`. If you find the
+`torch/csrc/autograd/generated/VariableType.h` (available in generated code in pytorch install dir). If you find the
 corresponding function in this header file, most likely, it is an ATen
 operator.
 
 **Define symbolic functions.** In this case, you should obey the following rules.
-- Define the symbolic function in `torch/onnx/symbolic.py`. Make sure the
+- Define the symbolic function in [`torch/onnx/symbolic.py`](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic.py). Make sure the
 function has the same name as the ATen operator/function defined in
 `VariableType.h`.
 - The first parameter is always the exported ONNX graph.
@@ -145,7 +145,7 @@ getting it into ONNX proper, you can add your operator as an *experimental*
 operator.
 
 ## More ONNX symbolic examples
-[ATen operators in symbolic.py](https://github.com/pytorch/pytorch/blob/99037d627da68cdf53d3d0315deceddfadf03bba/torch/onnx/symbolic.py)
+[ATen operators in symbolic.py](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic.py)
 
 [Index](https://github.com/pytorch/pytorch/blob/99037d627da68cdf53d3d0315deceddfadf03bba/torch/autograd/_functions/tensor.py#L24)
 
