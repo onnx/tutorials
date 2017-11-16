@@ -27,7 +27,7 @@ Let's walk through an example visualizing a [SqueezeNet](https://arxiv.org/abs/1
 
 #### Convert an exported ONNX model to a Graphviz representation
 
-In this folder you should find a file named `squeezenet.onnx`. This is a serialized SqueezeNet model that was exported to ONNX from Pytorch. Go into your ONNX repository and run the following command:
+In the `assets` folder you should find a file named `squeezenet.onnx`. This is a serialized SqueezeNet model that was exported to ONNX from Pytorch. Go into your ONNX repository and run the following command:
 
     python onnx/tools/net_drawer.py --input <path to squeezenet.onnx> --output squeezenet.dot --embed_docstring
     
