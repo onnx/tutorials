@@ -17,7 +17,7 @@ To visualize an ONNX model, we can use the [net drawer tool](https://github.com/
 
 Let's walk through an example visualizing a [SqueezeNet](https://arxiv.org/abs/1602.07360) model exported from [Pytorch](https://github.com/bwasti/AICamera/blob/master/Exporting%20Squeezenet%20to%20mobile.ipynb). Here's an example visualization:
 
-![SqueezeNet Visualization](squeezenet.png)
+![SqueezeNet Visualization](assets/squeezenet.png)
 
 **Prerequisites**
 * You will need [Graphviz](http://www.graphviz.org/) – specifically, the `dot` command-line utility.
