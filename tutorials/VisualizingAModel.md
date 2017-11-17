@@ -1,55 +1,55 @@
 Visualizing an ONNX Model
 =========================
 
-To visualize an onnx model, we can use the [net drawer tool](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py). This tool takes in a serialized ONNX model and produces a directed graph representation. The graph contains this information:
+To visualize an ONNX model, we can use the [net drawer tool](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py). This tool takes in a serialized ONNX model and produces a directed graph representation. The graph contains the following information:
 
 * Tensors
    * Input/output tensors
    * Intermediate tensors
-* Ops
+* Operators (ops)
    * Op type
    * Op number
    * Input tensor names
    * Output tensor names
-   * Docstrings (Pytorch exports stack traces here, so this is a good way to get your bearings about the network topology)
+   * Docstrings (PyTorch exports stack traces, so this is a good way to become familiarized with the network topology)
 
 ## SqueezeNet Example
 
-Let's walk through an example visualizing a [SqueezeNet](https://arxiv.org/abs/1602.07360) model exported from [Pytorch](https://github.com/bwasti/AICamera/blob/master/Exporting%20Squeezenet%20to%20mobile.ipynb). An example visualization:
+Let's walk through an example visualizing a [SqueezeNet](https://arxiv.org/abs/1602.07360) model exported from [Pytorch](https://github.com/bwasti/AICamera/blob/master/Exporting%20Squeezenet%20to%20mobile.ipynb). Here's an example visualization:
 
 ![SqueezeNet Visualization](squeezenet.png)
 
-#### Prerequisites
-* You will need [Graphviz](http://www.graphviz.org/), and particularly the `dot` command-line utility.
+**Prerequisites**
+* You will need [Graphviz](http://www.graphviz.org/) – specifically, the `dot` command-line utility.
 * You'll need the `pydot` Python package.
-* For the net drawer, you will need [ONNX](https://github.com/onnx/onnx), both installed and cloned somewhere (so you have access to the net_drawer.py file).
-* For the optional part (i.e. experimentation) you'll need Pytorch and Numpy
+* For the net drawer, you will need [ONNX](https://github.com/onnx/onnx), both installed and cloned somewhere (so that you have access to the `net_drawer.py` file).
+* For the optional part (i.e., experimentation), you'll need PyTorch and Numpy.
 
-#### Convert an exported ONNX model to a Graphviz representation
+### Convert an exported ONNX model to a Graphviz representation
 
-In the `assets` folder you should find a file named `squeezenet.onnx`. This is a serialized SqueezeNet model that was exported to ONNX from Pytorch. Go into your ONNX repository and run the following command:
+In the `assets` folder, you should find a file named `squeezenet.onnx`. This is a serialized SqueezeNet model that was exported to ONNX from PyTorch. Go into your ONNX repository and run the following:
 
     python onnx/tools/net_drawer.py --input <path to squeezenet.onnx> --output squeezenet.dot --embed_docstring
-    
-The command line flags are as follows:
 
-- `input` specifies the input filename, i.e. the serialized ONNX model you'd like to visualize
+The command line flags are described below:
+
+- `input` specifies the input filename (i.e., the serialized ONNX model you would like to visualize).
 - `output` specifies where to write the Graphviz `.dot` file.
-- `embed_docstring` specifies that you'd like to embed the doc_string for each node in the graph visualization. This is implemented as a javascript alert() that is fired when you click on the node.
+- `embed_docstring` specifies that you'd like to embed the doc_string for each node in the graph visualization. This is implemented as a JavaScript alert() that occurs when you click on the node.
 
 Now, we have a Graphviz file `squeezenet.dot`. We need to convert it into a viewable format. Let's convert this into an `svg` file like so:
 
     dot -Tsvg squeezenet.dot -o squeezenet.svg
-    
-You should now have an `svg` file named `squeezenet.svg`. Now open this file in a web browser (I've tried Chrome and Firefox and they both work).
 
-#### Interpreting the graph
+You should now have an `svg` file named `squeezenet.svg`. Open this file in a web browser.
 
-Within the graph, white hexagons represent tensors and green rectangles represent ops. Within the op nodes, inputs are listed in order and outputs are listed in order. Note that the position of the Hexagons with respect to the ops does NOT represent input order. Finally, clicking on each op node will bring up an alert that contains the doc string (stack trace for Pytorch) that may have useful information about each node.
+### Interpreting the graph
 
-#### (Optional) Exporting the ONNX model
+Within the graph, white hexagons represent tensors and green rectangles represent ops. Within the op nodes, inputs and outputs are listed in order. Note that the position of the hexagons with respect to the ops does NOT represent input order. Clicking on each op node will bring up an alert that contains the doc string (stack trace for PyTorch), and may have useful information about each node.
 
-This is the code that I used to create the exported model. You can put this into a Python script if you'd like to experiment:
+### (Optional) Exporting the ONNX model
+
+To create the exported model, you can put this into a Python script:
 
 ```python
 # Some standard imports
