@@ -19,7 +19,7 @@
 ## ONNX tools
 
 * [Visualizing an ONNX model](tutorials/VisualizingAModel.md) (useful for debugging)
-* [Example of operating on ONNX protobuf](onnx/examples/Protobufs.ipynb)
+* [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/master/onnx/examples/Protobufs.ipynb)
 
 ## Contributing
 
