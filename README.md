@@ -18,7 +18,7 @@
 
 ## ONNX tools
 
-* [Correctness Verification and Performance Comparison](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
+* [Verifying correctness and comparing performance](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
 * [Visualizing an ONNX model](tutorials/VisualizingAModel.md) (useful for debugging)
 * [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/master/onnx/examples/Protobufs.ipynb)
 
