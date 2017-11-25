@@ -33,7 +33,9 @@ function has the same name as the ATen operator/function defined in
 dispatch is done with keyword arguments.
 - Parameter ordering does NOT necessarily match what is in `VariableType.h`.
 Tensors (inputs) are always first, followed by non-tensor arguments.
-- In the symbolic function, we usually need to create an ONNX node in the graph. Here is an example to create a node for the `Elu` ONNX operator:
+- In the symbolic function, if the target op is already standarized in ONNX,
+we just need to create a node to represent the ONNX operator in the graph. 
+Here is an example to create a node for the `Elu` ONNX operator:
 `g.op("Elu", input, alpha_f=_scalar(alpha))`. More details are included in
 [API section](#api).
 - If the input argument is a tensor, but ONNX asks for a scalar, we have to
@@ -65,7 +67,8 @@ class.
 - The first parameter is always the exported ONNX graph.
 - Parameter names except the first must match the names in `forward` EXACTLY.
 - The output tuple size must match the outputs of `forward`.
-- In the symbolic function, we usually need to create an ONNX node in the graph.
+- In the symbolic function, if the target op is already standarized,
+we only need to create a node in the graph to represent the ONNX operator.
 Check the [API Section](#api) for more details.
 
 
@@ -76,20 +79,20 @@ Symbolic functions should be implemented in Python. All of these functions inter
 def operator/symbolic(g, *inputs):
   """
   Modifies Graph (e.g., using "op"), adding the ONNX operations representing
-  this PyTorch function, and returning a Node or tuple of Nodes specifying the
+  this PyTorch function, and returning a Value or tuple of Values specifying the
   ONNX outputs whose values correspond to the original PyTorch return values
   of the autograd Function (or None if an output is not supported by ONNX).
 
   Arguments:
     g (Graph): graph to write the ONNX representation into
-    inputs (Node..): list of nodes representing the variables which contain
+    inputs (Value...): list of values representing the variables which contain
         the inputs for this function
   """
 
-class Node(object):
+class Value(object):
   """Represents an intermediate tensor value computed in ONNX."""
   def type(self):
-    """Returns the Type of the node."""
+    """Returns the Type of the value."""
 
 class Type(object):
   def sizes(self):
@@ -100,16 +103,16 @@ class Graph(object):
     """
     Create an ONNX operator 'opname', taking 'args' as inputs
     and attributes 'kwargs' and add it to the current graph,
-    returning the node representing the single output of this
+    returning the value representing the single output of this
     operator (see the `outputs` keyword argument for multi-return
-    nodes).
+    operators).
 
     The set of operators and the inputs/attributes they take
     is documented at https://github.com/onnx/onnx/blob/master/docs/Operators.md
 
     Arguments:
         opname (string): The ONNX operator name, e.g., `Abs` or `Add`.
-        args (Node...): The inputs to the operator; usually provided
+        args (Value...): The inputs to the operator; usually provided
             as arguments to the `symbolic` definition.
         kwargs: The attributes of the ONNX operator, with keys named
             according to the following convention: `alpha_f` indicates
@@ -121,7 +124,7 @@ class Graph(object):
         outputs (int, optional):  The number of outputs this operator returns;
             by default an operator is assumed to return a single output.
             If `outputs` is greater than one, this functions returns a tuple
-            of output `Node`, representing each output of the ONNX operator
+            of output `Value`, representing each output of the ONNX operator
             in positional.
     """
 ```
