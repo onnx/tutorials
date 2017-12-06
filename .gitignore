@@ -1,1 +1,4 @@
 .ipynb_checkpoints
+/tutorials/output/*
+/tutorials/output/*/
+!/tutorials/output/README.md
