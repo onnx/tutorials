@@ -13,6 +13,7 @@
 
 ## End-to-end tutorials
 
+* [Docker image for Caffe2/PyTorch tutorials](pytorch_caffe2_docker.md)
 * [Converting SuperResolution model from PyTorch to Caffe2 and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
 * [Transferring SqueezeNet from PyTorch to Caffe2 and to Android app](tutorials/PytorchCaffe2MobileSqueezeNet.ipynb)
 
