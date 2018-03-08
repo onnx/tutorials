@@ -1,4 +1,4 @@
-# [ONNX](https://github.com/onnx/onnx) tutorials
+o [ONNX](https://github.com/onnx/onnx) tutorials
 
 ## Importing and Exporting from frameworks
 
@@ -10,7 +10,7 @@
 | [Apache MXNet](http://mxnet.incubator.apache.org/) | [onnx/onnx-mxnet](https://github.com/onnx/onnx-mxnet) | coming soon | [Importing](tutorials/OnnxMxnetImport.ipynb) [experimental] |
 | [Chainer](https://chainer.org/) | [chainer/onnx-chainer](https://github.com/chainer/onnx-chainer) | [Exporting](tutorials/ChainerOnnxExport.ipynb) | coming soon |
 | [TensorFlow](https://www.tensorflow.org/) | [onnx/onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) | coming soon | [Importing](tutorials/OnnxTensorflowImport.ipynb) [experimental] |
-| [Apple CoreML](https://developer.apple.com/documentation/coreml) | [onnx/onnx-coreml](https://github.com/onnx/onnx-coreml) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Experting](https://github.com/onnx/onnxmltools) | [Importing](tutorials/OnnxCoremlImport.ipynb) |
+| [Apple CoreML](https://developer.apple.com/documentation/coreml) | [onnx/onnx-coreml](https://github.com/onnx/onnx-coreml) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnxmltools) | [Importing](tutorials/OnnxCoremlImport.ipynb) |
 | [SciKit-Learn](http://scikit-learn.org/) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnxmltools) | n/a |
 
 ## End-to-end tutorials
