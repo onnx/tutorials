@@ -56,7 +56,7 @@ For now, we'll just download pre-trained models with the script provided by the 
 This script downloads the pre-trained PyTorch models and puts them into the `saved_models` folder.
 There should now be 4 files, `candy.pth`, `mosaic.pth`, `rain_princess.pth` and `udnie.pth` in your directory.
 
-## Converting the PyTorch models to the ONNX model format
+## Convert the PyTorch models to ONNX models
 
 Now that we have the pre-trained PyTorch models as `.pth` files in the `saved_models` folder, we will need to convert them to ONNX format.
 The model definition is in the pytorch/examples repository we cloned previously, and with a few lines of python we can export it to ONNX.
