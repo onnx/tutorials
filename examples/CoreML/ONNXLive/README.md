@@ -38,35 +38,34 @@ You can also convert models in Linux, however to run the iOS app itself, you wil
 
 ## Download (or train) PyTorch style transfer models
 
-For this tutorial, we use the style transfer models that are published with pytorch in https://github.com/pytorch/examples/tree/master/fast_neural_style .
-If you want to use different PyTorch or ONNX models, feel free to skip this step.
+For this tutorial, we will use the style transfer models that are published with pytorch in https://github.com/pytorch/examples/tree/master/fast_neural_style .
+If you would like to use a different PyTorch or ONNX model, feel free to skip this step.
 
-These models are meant for doing style transfer on still images and are not optimized to be fast enough for video,
-but if we reduce the resolution enough, they work well on videos as well.
+These models are meant for applying style transfer on still images and really not optimized to be fast enough for video. However if we reduce the resolution low enough, they can also work well on videos.
 
-Let's download these models.
+Let's download the models.
 
     git clone https://github.com/pytorch/examples
     cd examples/fast_neural_style
 
-If you want to train the models yourself, the pytorch/examples repository we just cloned has more information on how to do this.
-For now, we'll just download pretrained models with the script provided by the repository:
+If you would like to train the models yourself, the pytorch/examples repository you just cloned has more information on how to do this.
+For now, we'll just download pre-trained models with the script provided by the repository:
 
     ./download_saved_models.sh
 
-This script downloads the pretrained PyTorch models and puts them into the `saved_models` folder.
-There should now be 4 files, `candy.pth`, `mosaic.pth`, `rain_princess.pth` and `udnie.pth`.
+This script downloads the pre-trained PyTorch models and puts them into the `saved_models` folder.
+There should now be 4 files, `candy.pth`, `mosaic.pth`, `rain_princess.pth` and `udnie.pth` in your directory.
 
-## Convert the PyTorch models to ONNX models
+## Converting the PyTorch models to the ONNX model format
 
-Now we have the pretrained PyTorch models as `.pth` files in the `saved_models` folder and want to convert them to ONNX.
-The model definition is in the pytorch/examples repository we cloned before, and with a few lines of python we can export it.
-Basically, instead of running the neural net, we call `torch.onnx._export`, which is provided with PyTorch.
-However, in this case we don't even need to do that, because there already is a script `neural_style/neural_style.py` doing this for us.
-You can take a look at that script if you want to apply it to different models.
+Now that we have the pre-trained PyTorch models as `.pth` files in the `saved_models` folder, we will need to convert them to ONNX format.
+The model definition is in the pytorch/examples repository we cloned previously, and with a few lines of python we can export it to ONNX.
+In this case, instead of actually running the neural net, we will call `torch.onnx._export`, which is provided with PyTorch as an api to directly export ONNX formatted models from PyTorch.
+However, in this case we don't even need to do that, because a script already exists `neural_style/neural_style.py` that will do this for us.
+You can also take a look at that script if you would like to apply it to other models.
 
-Since the PyTorch to ONNX export is based on tracing your neural network, this will internally run the network.
-For this, it needs an input image to apply the style transfer to. This can just be an blank image.
+Exporting the ONNX format from PyTorch is essentially tracing your neural network so this api call will internally run the network on 'dummy data' in order to generate the graph.
+For this, it needs an input image to apply the style transfer to which can simply be a blank image.
 However, the pixel size of this image is important, as this will be the size for the exported style transfer model.
 To get good performance, we'll use a resolution of 250x540. Feel free to take a larger resolution if you care less about
 FPS and more about style transfer quality.
@@ -82,7 +81,7 @@ and use that to export the PyTorch models
     python ./neural_style/neural_style.py eval --content-image dummy.jpg --output-image dummy-out.jpg --model ./saved_models/rain_princess.pth --cuda 0 --export_onnx ./saved_models/rain_princess.onnx
     python ./neural_style/neural_style.py eval --content-image dummy.jpg --output-image dummy-out.jpg --model ./saved_models/mosaic.pth --cuda 0 --export_onnx ./saved_models/mosaic.onnx
 
-You should end up getting 4 files, `candy.onnx`, `mosaic.onnx`, `rain_princess.onnx` and `udnie.onnx`,
+You should end up with 4 files, `candy.onnx`, `mosaic.onnx`, `rain_princess.onnx` and `udnie.onnx`,
 created from the corresponding `.pth` files.
 
 ## Convert the ONNX models to CoreML models
