@@ -1,23 +1,22 @@
 # ONNXLive Tutorial:
-Convert style transfer models from PyTorch to CoreML.
+This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple Core ML format using ONNX. THis will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera. 
 
-ONNX is a neural network exchange format that can be exported and imported from/to many deep learning frameworks.
-In this tutorial, we will use it to convert PyTorch style transfer models to CoreML and
-run them on an iPhone on the live stream from the camera.
+## What is ONNX?
+ONNX (Open Neural Network Exchange is an open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners. You can learn more about ONNX and what tools are supported by going to [onnx.ai](http://onnx.ai/).
 
-## Overview
+## Tutorial Overview
 
-This tutorial goes through 4 steps:
+This tutorial will walk you through 4 main steps:
 
 1. [Download (or train) PyTorch style transfer models](#download-or-train-pytorch-style-transfer-models)
 2. [Convert the PyTorch models to ONNX models](#convert-the-pytorch-models-to-onnx-models)
 3. [Convert the ONNX models to CoreML models](#convert-the-onnx-models-to-coreml-models)
 4. [Run the CoreML models in a style transfer iOS App](#run-the-coreml-models-in-a-style-transfer-ios-app)
 
-## Preparations
+## Preparing the Environment
 
-We're working in a virtualenv to not screw with your local packages.
-We're using Python 3.6 for this tutorial, but other versions should work too.
+We will be working in a virtualenv in order to avoid conflicts with your local packages.
+We are also using Python 3.6 for this tutorial, but other versions should work as well.
 
     python3.6 -m venv venv
     source ./venv/bin/activate
@@ -26,7 +25,7 @@ You need to install pytorch
 
     pip install torchvision
     
-and the onnx->coreml converter.
+and the onnx->coreml converter
 
     git clone https://github.com/onnx/onnx-coreml
     cd onnx-coreml
@@ -34,8 +33,8 @@ and the onnx->coreml converter.
     ./install.sh
     cd ..
     
-You'd also need to install XCode if you want to run the iOS style transfer app on your iPhone.
-Converting the models will work on Linux too, but to run the iOS app, you need a Mac.
+You will also need to install XCode if you want to run the iOS style transfer app on your iPhone.
+You can also convert models in Linux, however to run the iOS app itself, you will need a Mac.
 
 ## Download (or train) PyTorch style transfer models
 
