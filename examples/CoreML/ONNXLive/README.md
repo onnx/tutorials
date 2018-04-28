@@ -1,8 +1,8 @@
 # ONNXLive Tutorial:
-This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple CoreML format using ONNX. THis will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera. 
+This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple CoreML format using ONNX. This will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera. 
 
 ## What is ONNX?
-ONNX (Open Neural Network Exchange is an open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners. You can learn more about ONNX and what tools are supported by going to [onnx.ai](http://onnx.ai/).
+ONNX (Open Neural Network Exchange) is an open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners. You can learn more about ONNX and what tools are supported by going to [onnx.ai](http://onnx.ai/).
 
 ## Tutorial Overview
 
@@ -117,7 +117,7 @@ we now run it
     python onnx_to_coreml.py ./saved_models/rain_princess.onnx ./saved_models/rain_princess.mlmodel
     python onnx_to_coreml.py ./saved_models/mosaic.onnx ./saved_models/mosaic.mlmodel
 
-Now, there should be 4 CoreML models in your `saved_models` directory: `candy.mlmodel`, `mosaic.mlmodel`, rain_princess.mlmodel` and `udnie.mlmodel`.
+Now, there should be 4 CoreML models in your `saved_models` directory: `candy.mlmodel`, `mosaic.mlmodel`, `rain_princess.mlmodel` and `udnie.mlmodel`.
 
 ## Run the CoreML models in a style transfer iOS App
 
@@ -130,7 +130,7 @@ We recommend using XCode 9.3 and an iPhone X. There might be issues running on o
 
 In the `Models/` folder, the project contains some .mlmodel files. We're going to replace them with the models we just created.
 
-You then, run the app on your iPhone and you are all set. Tapping on the screen switches through the models.
+You then run the app on your iPhone and you are all set. Tapping on the screen switches through the models.
 
 ## Conclusion
 
