@@ -1,5 +1,5 @@
 # ONNXLive Tutorial:
-This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple Core ML format using ONNX. THis will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera. 
+This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple CoreML format using ONNX. THis will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera. 
 
 ## What is ONNX?
 ONNX (Open Neural Network Exchange is an open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners. You can learn more about ONNX and what tools are supported by going to [onnx.ai](http://onnx.ai/).
@@ -86,17 +86,16 @@ created from the corresponding `.pth` files.
 
 ## Convert the ONNX models to CoreML models
 
-Now that we have the ONNX models, we can convert them to CoreML models to run on iOS devices.
+Now that we have ONNX models, we can convert them to CoreML models in order to run them on Apple devices.
 For this, we use the onnx-coreml converter we installed previously.
-The converter comes with a `convert-onnx-to-coreml` script, which the installation steps above added to our path,
-but unfortunately that doesn't work for us, because we need to mark the input and output of the network as an image
-and while this is supported by the converter, it is only supported when calling the converter from python.
+The converter comes with a `convert-onnx-to-coreml` script, which the installation steps above added to our path. Unfortunately that won't work for us as we need to mark the input and output of the network as an image
+and, while this is supported by the converter, it is only supported when calling the converter from python.
 
 Looking at the style transfer model (for example opening the .onnx file in an application like [Netron](https://github.com/lutzroeder/Netron)),
 we see that the input is named '0' and the output is named '186'. These are just numeric ids assigned by PyTorch.
-These are the ones we need to mark as images.
+We will need to mark these as images.
 
-So let's write a small python file `onnx_to_coreml.py`
+So let's create a small python file and call it `onnx_to_coreml.py`. This can be created by using the touch command and edited with your favorite editor to add the following lines of code.
 
     import sys
     from onnx import onnx_pb2
@@ -111,7 +110,7 @@ So let's write a small python file `onnx_to_coreml.py`
     coreml_model = convert(model_proto, image_input_names=['0'], image_output_names=['186'])
     coreml_model.save(model_out)
     
-and run it
+we now run it
 
     python onnx_to_coreml.py ./saved_models/candy.onnx ./saved_models/candy.mlmodel
     python onnx_to_coreml.py ./saved_models/udnie.onnx ./saved_models/udnie.mlmodel
@@ -122,8 +121,7 @@ Now, there should be 4 CoreML models in your `saved_models` directory: `candy.ml
 
 ## Run the CoreML models in a style transfer iOS App
 
-This repository (i.e. the one you're currently reading the README.md of) contains an iOS app able to run CoreML style transfer models
-on a live camera stream from your phone camera. Let's clone the repository
+This repository (i.e. the one you're currently reading the README.md of) contains an iOS app able to run CoreML style transfer models on a live camera stream from your phone camera. Let's clone the repository
 
     git clone https://github.com/onnx/tutorials
     
@@ -132,12 +130,13 @@ We recommend using XCode 9.3 and an iPhone X. There might be issues running on o
 
 In the `Models/` folder, the project contains some .mlmodel files. We're going to replace them with the models we just created.
 
-Then, run the app on your iPhone and your all set. Tapping on the screen switches through the models.
+You then, run the app on your iPhone and you are all set. Tapping on the screen switches through the models.
 
 ## Conclusion
 
 We hope this tutorial gave you an overview of what ONNX is about and how you can use it to convert neural networks
-between frameworks, in this case a few style transfer models from PyTorch to CoreML.
+between frameworks, in this case neural style transfer models moving from PyTorch to CoreML.
 
 Feel free to experiment with these steps and test them on your own models.
 Please let us know if you hit any issues or want to give feedback. We'd like to hear what you think.
+
