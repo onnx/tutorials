@@ -21,17 +21,9 @@ We are also using Python 3.6 for this tutorial, but other versions should work a
     python3.6 -m venv venv
     source ./venv/bin/activate
 
-You need to install pytorch
+You need to install pytorch and the onnx->coreml converter
 
-    pip install torchvision
-    
-and the onnx->coreml converter
-
-    git clone https://github.com/onnx/onnx-coreml
-    cd onnx-coreml
-    git submodule update --recursive --init
-    ./install.sh
-    cd ..
+    pip install torchvision onnx-coreml
     
 You will also need to install XCode if you want to run the iOS style transfer app on your iPhone.
 You can also convert models in Linux, however to run the iOS app itself, you will need a Mac.
@@ -98,14 +90,14 @@ We will need to mark these as images.
 So let's create a small python file and call it `onnx_to_coreml.py`. This can be created by using the touch command and edited with your favorite editor to add the following lines of code.
 
     import sys
-    from onnx import onnx_pb2
+    from onnx import onnx_pb
     from onnx_coreml import convert
     
     model_in = sys.argv[1]
     model_out = sys.argv[2]
     
     model_file = open(model_in, 'rb')
-    model_proto = onnx_pb2.ModelProto()
+    model_proto = onnx_pb.ModelProto()
     model_proto.ParseFromString(model_file.read())
     coreml_model = convert(model_proto, image_input_names=['0'], image_output_names=['186'])
     coreml_model.save(model_out)
