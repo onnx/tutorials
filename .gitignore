@@ -1,4 +1,6 @@
 .ipynb_checkpoints
 /tutorials/output/*
 /tutorials/output/*/
+.DS_Store
+.idea/
 !/tutorials/output/README.md
