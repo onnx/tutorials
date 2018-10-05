@@ -12,7 +12,7 @@
 | [TensorFlow](https://www.tensorflow.org/) | [onnx/onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) | [Exporting](tutorials/OnnxTensorflowExport.ipynb) | [Importing](tutorials/OnnxTensorflowImport.ipynb) [experimental] |
 | [Apple CoreML](https://developer.apple.com/documentation/coreml) | [onnx/onnx-coreml](https://github.com/onnx/onnx-coreml) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnxmltools) | [Importing](tutorials/OnnxCoremlImport.ipynb) |
 | [SciKit-Learn](http://scikit-learn.org/) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnxmltools) | n/a |
-| [ML.NET](https://github.com/dotnet/machinelearning/) | [built-in Convert to ONNX-ML](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.models.onnxconverter.convert?view=ml-dotnet#definition) | [Exporting](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.Tests/OnnxTests.cs) | n/a |
+| [ML.NET](https://github.com/dotnet/machinelearning/) | [built-in](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.models.onnxconverter.convert?view=ml-dotnet#definition) | [Exporting](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.Tests/OnnxTests.cs) | [Importing](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.OnnxTransformTest/OnnxTransformTests.cs#L186) |
 | [Menoh](https://github.com/pfnet-research/menoh) | [pfnet-research/menoh](https://github.com/pfnet-research/menoh) | n/a | [Importing](tutorials/OnnxMenohHaskellImport.ipynb) |
 
 ## End-to-end tutorials
