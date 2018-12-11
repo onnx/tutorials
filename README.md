@@ -26,6 +26,7 @@
 * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
 * [Converting Style Transfer model from PyTorch to CoreML and deploying to an iPhone](https://github.com/onnx/tutorials/tree/master/examples/CoreML/ONNXLive)
 * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
+* [MXNet to ONNX to ML.NET with SageMaker, ECS and ECR](https://cosminsanda.com/posts/mxnet-to-onnx-to-ml.net-with-sagemaker-ecs-and-ecr/) - external link
 
 ## ONNX tools
 
