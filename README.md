@@ -1,6 +1,13 @@
 # [ONNX](https://github.com/onnx/onnx) tutorials
 
-## Importing and Exporting from frameworks
+[Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format of machine learning models to offer interoperability between various AI frameworks. With ONNX, AI develpers could choose the best framework for training and switch to different one for shipping.
+
+ONNX is supported by [a community of partners](https://onnx.ai/supported-tools), and more and more AI frameworks are buiding ONNX support including PyTorch, Caffe2, Microsoft Cognitive Toolkit and Apache MXNet.  
+
+## Getting ONNX models
+
+* Choose a pre-trained ONNX model from the [ONNX Model Zoo](https://github.com/onnx/models). A lot of pre-trained ONNX models are provided for common scenarios. 
+* Convert models from mainstream frameworks. [ONNXMLTools](https://github.com/onnx/onnxmltools) and [WinMLTools](https://pypi.org/project/winmltools/) are good tools to start with. More tutorials are below.
 
 | Framework / tool | Installation | Exporting to ONNX (frontend) | Importing ONNX models (backend) |
 | --- | --- | --- | --- |
@@ -16,20 +23,32 @@
 | [Menoh](https://github.com/pfnet-research/menoh) | [pfnet-research/menoh](https://github.com/pfnet-research/menoh) | n/a | [Importing](tutorials/OnnxMenohHaskellImport.ipynb) |
 | [MATLAB](https://www.mathworks.com/) | [onnx converter on matlab central file exchange](https://www.mathworks.com/matlabcentral/fileexchange/67296) | [Exporting](https://www.mathworks.com/help/deeplearning/ref/exportonnxnetwork.html) | [Importing](https://www.mathworks.com/help/deeplearning/ref/importonnxnetwork.html) |
 
+* Use your data to generate a customized ONNX model from [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml)
+
+
 ## End-to-end tutorials
 
-* [Docker image for Caffe2/PyTorch tutorials](pytorch_caffe2_docker.md)
-* [Converting SuperResolution model from PyTorch to Caffe2 and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
-* [Transferring SqueezeNet from PyTorch to Caffe2 and to Android app](tutorials/PytorchCaffe2MobileSqueezeNet.ipynb)
-* [Serving PyTorch Models on AWS Lambda with Caffe2 & ONNX](https://machinelearnings.co/serving-pytorch-models-on-aws-lambda-with-caffe2-onnx-7b096806cfac)
-* [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
-* [Converting Style Transfer model from PyTorch to CoreML and deploying to an iPhone](https://github.com/onnx/tutorials/tree/master/examples/CoreML/ONNXLive)
-* [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
+* For preparation 
+  * [Docker image for Caffe2/PyTorch/ONNX tutorials](pytorch_caffe2_docker.md)
 
+* For serving
+  * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
+
+* For conversion
+  * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
+  
+* From conversion to deployment
+  * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
+  * [Transferring SqueezeNet from PyTorch to Caffe2 with ONNX and to Android app](tutorials/PytorchCaffe2MobileSqueezeNet.ipynb)
+  * [Converting Style Transfer model from PyTorch to CoreML with ONNX and deploying to an iPhone](https://github.com/onnx/tutorials/tree/master/examples/CoreML/ONNXLive)
+  * [Serving PyTorch Models on AWS Lambda with Caffe2 & ONNX](https://machinelearnings.co/serving-pytorch-models-on-aws-lambda-with-caffe2-onnx-7b096806cfac)
+ 
+ 
 ## ONNX tools
 
 * [Verifying correctness and comparing performance](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
 * [Visualizing an ONNX model](tutorials/VisualizingAModel.md) (useful for debugging)
+* [Netron: a viewer for ONNX models](https://github.com/lutzroeder/Netron)
 * [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/master/onnx/examples/Protobufs.ipynb)
 
 ## Contributing
