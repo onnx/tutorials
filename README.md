@@ -1,6 +1,6 @@
 # [ONNX](https://github.com/onnx/onnx) tutorials
 
-[Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format of machine learning models to offer interoperability between various AI frameworks. With ONNX, AI develpers could choose the best framework for training and switch to different one for shipping.
+[Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format of machine learning models to offer interoperability between various AI frameworks. With ONNX, AI developers could choose the best framework for training and switch to different one for shipping.
 
 ONNX is supported by [a community of partners](https://onnx.ai/supported-tools), and more and more AI frameworks are buiding ONNX support including PyTorch, Caffe2, Microsoft Cognitive Toolkit and Apache MXNet.  
 
