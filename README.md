@@ -1,12 +1,12 @@
 # [ONNX](https://github.com/onnx/onnx) tutorials
 
-[Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format of machine learning models to offer interoperability between various AI frameworks. With ONNX, AI develpers could choose the best framework for training and switch to different one for shipping.
+[Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format for representing machine learning models offering interoperability between various AI frameworks. With ONNX, AI developers can choose the best framework for training and switch to a different one for shipping.
 
-ONNX is supported by [a community of partners](https://onnx.ai/supported-tools), and more and more AI frameworks are buiding ONNX support including PyTorch, Caffe2, Microsoft Cognitive Toolkit and Apache MXNet.  
+ONNX is supported by [a community of partners](https://onnx.ai/supported-tools), and more and more AI frameworks are building ONNX support including PyTorch, Caffe2, Microsoft Cognitive Toolkit and Apache MXNet.
 
 ## Getting ONNX models
 
-* Choose a pre-trained ONNX model from the [ONNX Model Zoo](https://github.com/onnx/models). A lot of pre-trained ONNX models are provided for common scenarios. 
+* Choose a pre-trained ONNX model from the [ONNX Model Zoo](https://github.com/onnx/models). A lot of pre-trained ONNX models are provided for common scenarios.
 * Convert models from mainstream frameworks. More tutorials are below.
 
 | Framework / tool | Installation | Exporting to ONNX (frontend) | Importing ONNX models (backend) |
@@ -24,27 +24,27 @@ ONNX is supported by [a community of partners](https://onnx.ai/supported-tools),
 | [MATLAB](https://www.mathworks.com/) | [onnx converter on matlab central file exchange](https://www.mathworks.com/matlabcentral/fileexchange/67296) | [Exporting](https://www.mathworks.com/help/deeplearning/ref/exportonnxnetwork.html) | [Importing](https://www.mathworks.com/help/deeplearning/ref/importonnxnetwork.html) |
 | [TensorRT](https://developer.nvidia.com/tensorrt) | [onnx/onnx-tensorrt](https://github.com/onnx/onnx-tensorrt) | n/a | [Importing](https://github.com/onnx/onnx-tensorrt/blob/master/README.md) |
 
-* Use services like [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml) that generate customized ONNX models for your data 
+* Use services like [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml) that generate customized ONNX models for your data
 
 ## End-to-end tutorials
 
-* For preparation 
+* For preparation
   * [Docker image for Caffe2/PyTorch/ONNX tutorials](pytorch_caffe2_docker.md)
   * [Caffe/Keras/CoreML Docker Converter Image](https://hub.docker.com/r/microsoft/onnxconverter/)
-  
+
 * For serving
   * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
 
 * For conversion
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
-  
+
 * From conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
   * [Transferring SqueezeNet from PyTorch to Caffe2 with ONNX and to Android app](tutorials/PytorchCaffe2MobileSqueezeNet.ipynb)
   * [Converting Style Transfer model from PyTorch to CoreML with ONNX and deploying to an iPhone](https://github.com/onnx/tutorials/tree/master/examples/CoreML/ONNXLive)
   * [Serving PyTorch Models on AWS Lambda with Caffe2 & ONNX](https://machinelearnings.co/serving-pytorch-models-on-aws-lambda-with-caffe2-onnx-7b096806cfac)
   * [MXNet to ONNX to ML.NET with SageMaker, ECS and ECR](https://cosminsanda.com/posts/mxnet-to-onnx-to-ml.net-with-sagemaker-ecs-and-ecr/) - external link
- 
+
 ## ONNX tools
 
 * [Verifying correctness and comparing performance](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
