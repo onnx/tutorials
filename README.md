@@ -34,6 +34,7 @@ ONNX is supported by [a community of partners](https://onnx.ai/supported-tools),
 
 * For serving
   * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
+  * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
 
 * For conversion
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
