@@ -11,17 +11,21 @@ ONNX is supported by [a community of partners](https://onnx.ai/supported-tools),
 
 | Framework / tool | Installation | Exporting to ONNX (frontend) | Importing ONNX models (backend) |
 | --- | --- | --- | --- |
+| [Caffe](https://github.com/BVLC/caffe) | [apple/coremltools](https://github.com/apple/coremltools) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/caffe_coreml_onnx.ipynb) | n/a |
 | [Caffe2](http://caffe2.ai) | [part of caffe2 package](https://github.com/pytorch/pytorch/tree/master/caffe2/python/onnx) | [Exporting](tutorials/Caffe2OnnxExport.ipynb) | [Importing](tutorials/OnnxCaffe2Import.ipynb) |
-| [PyTorch](http://pytorch.org/) | [part of pytorch package](http://pytorch.org/docs/master/onnx.html) | [Exporting](tutorials/PytorchOnnxExport.ipynb), [Extending support](tutorials/PytorchAddExportSupport.md) | coming soon |
-| [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) | [built-in](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine) | [Exporting](tutorials/CntkOnnxExport.ipynb) | [Importing](tutorials/OnnxCntkImport.ipynb) |
-| [Apache MXNet](http://mxnet.incubator.apache.org/) | part of mxnet package [docs](http://mxnet.incubator.apache.org/api/python/contrib/onnx.html) [github](https://github.com/apache/incubator-mxnet/tree/master/python/mxnet/contrib/onnx) | [Exporting](tutorials/MXNetONNXExport.ipynb) | [Importing](tutorials/OnnxMxnetImport.ipynb) |
 | [Chainer](https://chainer.org/) | [chainer/onnx-chainer](https://github.com/chainer/onnx-chainer) | [Exporting](tutorials/ChainerOnnxExport.ipynb) | coming soon |
-| [TensorFlow](https://www.tensorflow.org/) | [onnx/onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) and [onnx/tensorflow-onnx](https://github.com/onnx/tensorflow-onnx) | [Exporting](tutorials/OnnxTensorflowExport.ipynb) | [Importing](tutorials/OnnxTensorflowImport.ipynb) [experimental] |
-| [Apple CoreML](https://developer.apple.com/documentation/coreml) | [onnx/onnx-coreml](https://github.com/onnx/onnx-coreml) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnxmltools) | [Importing](tutorials/OnnxCoremlImport.ipynb) |
-| [SciKit-Learn](http://scikit-learn.org/) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnxmltools) | n/a |
-| [ML.NET](https://github.com/dotnet/machinelearning/) | [built-in](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.models.onnxconverter.convert?view=ml-dotnet#definition) | [Exporting](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.Tests/OnnxTests.cs) | [Importing](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.OnnxTransformTest/OnnxTransformTests.cs#L186) |
-| [Menoh](https://github.com/pfnet-research/menoh) | [pfnet-research/menoh](https://github.com/pfnet-research/menoh) | n/a | [Importing](tutorials/OnnxMenohHaskellImport.ipynb) |
+| [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) | [built-in](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine) | [Exporting](tutorials/CntkOnnxExport.ipynb) | [Importing](tutorials/OnnxCntkImport.ipynb) |
+| [Apple CoreML](https://developer.apple.com/documentation/coreml) | [onnx/onnx-coreml](https://github.com/onnx/onnx-coreml) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/coreml_onnx.ipynb) | [Importing](tutorials/OnnxCoremlImport.ipynb) |
+| [Keras](https://github.com/keras-team/keras) | [onnx/kera-onnx](https://github.com/onnx/keras-onnx) | [Exporting](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/keras_onnx.ipynb) | n/a |
+| [LibSVM](https://github.com/cjlin1/libsvm) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/libsvm_onnx.ipynb) | n/a |
+| LightGBM | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Exporting](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/lightgbm_onnx.ipynb) | n/a |
 | [MATLAB](https://www.mathworks.com/) | [onnx converter on matlab central file exchange](https://www.mathworks.com/matlabcentral/fileexchange/67296) | [Exporting](https://www.mathworks.com/help/deeplearning/ref/exportonnxnetwork.html) | [Importing](https://www.mathworks.com/help/deeplearning/ref/importonnxnetwork.html) |
+| [Menoh](https://github.com/pfnet-research/menoh) | [pfnet-research/menoh](https://github.com/pfnet-research/menoh) | n/a | [Importing](tutorials/OnnxMenohHaskellImport.ipynb) |
+| [ML.NET](https://github.com/dotnet/machinelearning/) | [built-in](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.models.onnxconverter.convert?view=ml-dotnet#definition) | [Exporting](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.Tests/OnnxTests.cs) | [Importing](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.OnnxTransformTest/OnnxTransformTests.cs#L186) |
+| [Apache MXNet](http://mxnet.incubator.apache.org/) | part of mxnet package [docs](http://mxnet.incubator.apache.org/api/python/contrib/onnx.html) [github](https://github.com/apache/incubator-mxnet/tree/master/python/mxnet/contrib/onnx) | [Exporting](tutorials/MXNetONNXExport.ipynb) | [Importing](tutorials/OnnxMxnetImport.ipynb) |
+| [PyTorch](http://pytorch.org/) | [part of pytorch package](http://pytorch.org/docs/master/onnx.html) | [Exporting](tutorials/PytorchOnnxExport.ipynb), [Extending support](tutorials/PytorchAddExportSupport.md) | coming soon |
+| [SciKit-Learn](http://scikit-learn.org/) | [onnx/sklearn-onnx](https://github.com/onnx/sklearn-onnx) | [Exporting](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/sklearn_onnx.ipynb) | n/a |
+| [TensorFlow](https://www.tensorflow.org/) | [onnx/onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) and [onnx/tensorflow-onnx](https://github.com/onnx/tensorflow-onnx) | [Exporting](tutorials/OnnxTensorflowExport.ipynb) | [Importing](tutorials/OnnxTensorflowImport.ipynb) [experimental] |
 | [TensorRT](https://developer.nvidia.com/tensorrt) | [onnx/onnx-tensorrt](https://github.com/onnx/onnx-tensorrt) | n/a | [Importing](https://github.com/onnx/onnx-tensorrt/blob/master/README.md) |
 
 * Use services like [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml) that generate customized ONNX models for your data
@@ -42,17 +46,7 @@ ONNX is supported by [a community of partners](https://onnx.ai/supported-tools),
 
 * For conversion
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
-  * [Convert a Caffe model to CoreML to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/caffe_coreml_onnx.ipynb)
-  * [Convert a CNTK model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/cntk_onnx.ipynb)
-  * [Convert a CoreML model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/coreml_onnx.ipynb)
-  * [Convert a Keras model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/keras_onnx.ipynb)
-   * [Convert a Keras model to ONNX and score with ONNX Runtime](https://microsoft.github.io/onnxruntime/auto_examples/plot_dl_keras.html#sphx-glr-auto-examples-plot-dl-keras-py)
-  * [Convert a LibSVM model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/libsvm_onnx.ipynb)
-  * [Convert a LigthtGBM model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/lightgbm_onnx.ipynb)
-  * [Convert a MXNet model to ONNX](https://github.com/onnx/onnx-docker/tree/master/onnx-ecosystem/converter_scripts)
-  * [Convert a PyTorch model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/pytorch_onnx.ipynb)
-  * [Convert a Scikit-Learn model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/sklearn_onnx.ipynb)
-  * [Convert a Tensorflow model to ONNX](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/tf_onnx.ipynb)
+  * [Convert a Keras model to ONNX and score with ONNX Runtime](https://microsoft.github.io/onnxruntime/auto_examples/plot_dl_keras.html#sphx-glr-auto-examples-plot-dl-keras-py)
 
 * From conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
