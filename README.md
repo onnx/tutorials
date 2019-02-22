@@ -63,6 +63,7 @@ ONNX is supported by [a community of partners](https://onnx.ai/supported-tools),
 * [Visualizing an ONNX model](tutorials/VisualizingAModel.md) (useful for debugging)
 * [Netron: a viewer for ONNX models](https://github.com/lutzroeder/Netron)
 * [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/master/onnx/examples/Protobufs.ipynb)
+* [Float16 <-> Float32 converter](https://github.com/onnx/onnxmltools/blob/master/onnxmltools/utils/float16_converter.py)
 
 ## Contributing
 
