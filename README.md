@@ -44,6 +44,8 @@
 * For conversion
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
   * [Convert a Keras model to ONNX and score with ONNX Runtime](https://microsoft.github.io/onnxruntime/auto_examples/plot_dl_keras.html#sphx-glr-auto-examples-plot-dl-keras-py)
+  
+  Note: for direct conversion to/from ONNX format, see the "Exporting" and "Importing" columns in the table under [Getting ONNX Models](tutorials#getting-onnx-models)
 
 * From conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
