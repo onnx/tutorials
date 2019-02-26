@@ -1,8 +1,6 @@
-# [ONNX](https://github.com/onnx/onnx) tutorials
+# [ONNX](https://github.com/onnx/onnx) Tutorials
 
-[Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format for representing machine learning models offering interoperability between various AI frameworks. With ONNX, AI developers can choose the best framework for training and switch to a different one for shipping.
-
-ONNX is supported by [a community of partners](https://onnx.ai/supported-tools), and more and more AI frameworks are building ONNX support including PyTorch, Caffe2, Microsoft Cognitive Toolkit and Apache MXNet.
+[Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format for representing machine learning models. ONNX is supported by [a community of partners](https://onnx.ai/supported-tools) who have implemented it in many frameworks and tools.
 
 ## Getting ONNX models
 
@@ -34,7 +32,6 @@ ONNX is supported by [a community of partners](https://onnx.ai/supported-tools),
 
 * For preparation
   * [Docker image for Caffe2/PyTorch/ONNX tutorials](pytorch_caffe2_docker.md)
-  * [Caffe/Keras/CoreML Docker Converter Image](https://hub.docker.com/r/microsoft/onnxconverter/)
   * [Docker image for ONNX, ONNX Runtime, and Converters](https://github.com/onnx/onnx-docker/tree/master/onnx-ecosystem)
 
 * For serving
