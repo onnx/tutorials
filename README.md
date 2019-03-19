@@ -22,8 +22,8 @@
 | [ML.NET](https://github.com/dotnet/machinelearning/) | [built-in](https://docs.microsoft.com/en-us/dotnet/api/microsoft.ml.models.onnxconverter.convert?view=ml-dotnet#definition) | [Exporting](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.Tests/OnnxTests.cs) | [Importing](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.OnnxTransformTest/OnnxTransformTests.cs#L186) |
 | [Apache MXNet](http://mxnet.incubator.apache.org/) | part of mxnet package [docs](http://mxnet.incubator.apache.org/api/python/contrib/onnx.html) [github](https://github.com/apache/incubator-mxnet/tree/master/python/mxnet/contrib/onnx) | [Exporting](tutorials/MXNetONNXExport.ipynb) | [Importing](tutorials/OnnxMxnetImport.ipynb) |
 | [PyTorch](http://pytorch.org/) | [part of pytorch package](http://pytorch.org/docs/master/onnx.html) | [Exporting](tutorials/PytorchOnnxExport.ipynb), [Extending support](tutorials/PytorchAddExportSupport.md) | coming soon |
-| [SciKit-Learn](http://scikit-learn.org/) | [onnx/sklearn-onnx](https://github.com/onnx/sklearn-onnx) | [Exporting](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/sklearn_onnx.ipynb) | n/a |
-| [TensorFlow](https://www.tensorflow.org/) | [onnx/onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) and [onnx/tensorflow-onnx](https://github.com/onnx/tensorflow-onnx) | [Exporting](tutorials/OnnxTensorflowExport.ipynb) | [Importing](tutorials/OnnxTensorflowImport.ipynb) [experimental] |
+| [SciKit-Learn](http://scikit-learn.org/) | [onnx/sklearn-onnx](https://github.com/onnx/sklearn-onnx) | [Exporting](http://onnx.ai/sklearn-onnx/index.html) | n/a |
+| [TensorFlow](https://www.tensorflow.org/) | [onnx/onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) and [onnx/tensorflow-onnx](https://github.com/onnx/tensorflow-onnx) | [Exporting - ONNX-Tensorflow](tutorials/OnnxTensorflowExport.ipynb)<br>[Exporting - Tensorflow-ONNX(https://github.com/onnx/tensorflow-onnx/blob/master/examples/call_coverter_via_python.py) | [Importing](tutorials/OnnxTensorflowImport.ipynb) [experimental] |
 | [TensorRT](https://developer.nvidia.com/tensorrt) | [onnx/onnx-tensorrt](https://github.com/onnx/onnx-tensorrt) | n/a | [Importing](https://github.com/onnx/onnx-tensorrt/blob/master/README.md) |
 
 * Use services like [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml) that generate customized ONNX models for your data
@@ -39,12 +39,12 @@
   * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
   * Serving ONNX models with ONNX Runtime on Azure ML - [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb), [MNIST Handwritten Digits](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-mnist-deploy.ipynb), [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
   * [Inferencing ONNX models using ONNX Runtime Python API](https://microsoft.github.io/onnxruntime/auto_examples/plot_load_and_predict.html#sphx-glr-auto-examples-plot-load-and-predict-py)
-  * [Train a Scikit-learn pipeline, convert to ONNX, and score with ONNX Runtime](https://microsoft.github.io/onnxruntime/auto_examples/plot_convert_pipeline_vectorizer.html#sphx-glr-auto-examples-plot-convert-pipeline-vectorizer-py)
+  * [Score a converted Keras model with ONNX Runtime](https://microsoft.github.io/onnxruntime/auto_examples/plot_dl_keras.html#sphx-glr-auto-examples-plot-dl-keras-py)
+ 
 
 * For conversion
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
-  * [Convert a Keras model to ONNX and score with ONNX Runtime](https://microsoft.github.io/onnxruntime/auto_examples/plot_dl_keras.html#sphx-glr-auto-examples-plot-dl-keras-py)
-  
+
   Note: for direct conversion to/from ONNX format, see the "Exporting" and "Importing" columns in the table under [Getting ONNX Models](tutorials#getting-onnx-models)
 
 * From conversion to deployment
