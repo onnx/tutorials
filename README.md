@@ -43,7 +43,7 @@
 * For conversion
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
 
-  Note: for direct conversion to/from ONNX format, see the "Exporting" and "Importing" columns in the table under [Getting ONNX Models](tutorials#getting-onnx-models)
+  For direct conversion to/from ONNX format, see the "Exporting" and "Importing" columns in the table under [Getting ONNX Models](tutorials#getting-onnx-models)
 
 * From conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
@@ -60,7 +60,7 @@
 * [Visualizing an ONNX model](tutorials/VisualizingAModel.md) (useful for debugging)
 * [Netron: a viewer for ONNX models](https://github.com/lutzroeder/Netron)
 * [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/master/onnx/examples/Protobufs.ipynb)
-* [Float16 <-> Float32 converter](https://github.com/onnx/onnxmltools/blob/master/onnxmltools/utils/float16_converter.py)
+* [Float16 <-> Float32 converter](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/float32_float16_onnx.ipynb)
 
 ## Contributing
 
