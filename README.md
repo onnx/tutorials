@@ -2,7 +2,7 @@
 
 [Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format for representing machine learning models. ONNX is supported by [a community of partners](https://onnx.ai/supported-tools) who have implemented it in many frameworks and tools.
 
-These images are available for convenience to get started with ONNX models and these tutorials
+These images are available for convenience to get started with ONNX and tutorials on this page
   * [Docker image for ONNX and Caffe2/PyTorch](pytorch_caffe2_docker.md)
   * [Docker image for ONNX, ONNX Runtime, and various converters](https://github.com/onnx/onnx-docker/tree/master/onnx-ecosystem)
 
@@ -75,7 +75,7 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 
 ## End-to-End Tutorials
 
-* Serving
+### Serving
   * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
   * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
   * Serving ONNX models with ONNX Runtime on Azure ML
@@ -84,10 +84,10 @@ Once you have an ONNX model, it can be scored with a variety of tools.
     * [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
   * [Inferencing ONNX models using ONNX Runtime Python API](https://microsoft.github.io/onnxruntime/auto_examples/plot_load_and_predict.html#sphx-glr-auto-examples-plot-load-and-predict-py)
 
-* ONNX as an intermediary format
+### ONNX as an intermediary format
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
 
-* Conversion to deployment
+### Conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
   * [Transferring SqueezeNet from PyTorch to Caffe2 with ONNX and to Android app](tutorials/PytorchCaffe2MobileSqueezeNet.ipynb)
   * [Converting Style Transfer model from PyTorch to CoreML with ONNX and deploying to an iPhone](https://github.com/onnx/tutorials/tree/master/examples/CoreML/ONNXLive)
