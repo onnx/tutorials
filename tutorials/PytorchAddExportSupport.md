@@ -22,12 +22,12 @@ importer (such as onnx-caffe2) developers, as additional work is required.
 ### How to add support to export an operator in PyTorch
 #### Condition 1: If the operator in PyTorch is an ATen operator...
 To determine whether the operator is an ATen operator or not, check
-`torch/csrc/autograd/generated/VariableType.h` (available within generated code in the PyTorch install dir). If you find the corresponding function in this header file, it's most likely an ATen operator.
+[`torch/csrc/autograd/generated/VariableType.h`](https://bddppq.github.io/codebrowser/pytorch/pytorch/torch/csrc/autograd/generated/VariableType.h) (available within generated code in the PyTorch install dir). If you find the corresponding function in this header file, it's most likely an ATen operator.
 
 **Define symbolic functions.** In this case, you should obey the following rules.
-- Define the symbolic function in [`torch/onnx/symbolic.py`](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic.py). Make sure the
+- Define the symbolic function in [`torch/onnx/symbolic.py`](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic_helper.py). Make sure the
 function has the same name as the ATen operator/function defined in
-`VariableType.h`.
+[`VariableType.h`](https://bddppq.github.io/codebrowser/pytorch/pytorch/torch/csrc/autograd/generated/VariableType.h).
 - The first parameter is always the exported ONNX graph.
 - Parameter names must match the names in `VariableType.h` EXACTLY, because
 dispatch is done with keyword arguments.
@@ -138,7 +138,10 @@ getting it into ONNX proper, you can add your operator as an *experimental*
 operator.
 
 ## More ONNX symbolic examples
-- [ATen operators in symbolic.py](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic.py)
+- ATen operators in symbolic.py
+    - [symbolic_opset10.py](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic_opset10.py)
+    - [symbolic_opset9.py](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic_opset9.py)
+    - [symbolic_helper.py](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic_helper.py)
 - [Index](https://github.com/pytorch/pytorch/blob/99037d627da68cdf53d3d0315deceddfadf03bba/torch/autograd/_functions/tensor.py#L24)
 - [Negate](https://github.com/pytorch/pytorch/blob/99037d627da68cdf53d3d0315deceddfadf03bba/torch/autograd/_functions/basic_ops.py#L50)
 - [ConstantPadNd](https://github.com/pytorch/pytorch/blob/99037d627da68cdf53d3d0315deceddfadf03bba/torch/nn/_functions/padding.py#L8)
