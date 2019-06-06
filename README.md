@@ -6,11 +6,14 @@ These images are available for convenience to get started with ONNX and tutorial
   * [Docker image for ONNX and Caffe2/PyTorch](pytorch_caffe2_docker.md)
   * [Docker image for ONNX, ONNX Runtime, and various converters](https://github.com/onnx/onnx-docker/tree/master/onnx-ecosystem)
 
+
 ## Getting ONNX models
 
-* Choose a pre-trained ONNX model from the [ONNX Model Zoo](https://github.com/onnx/models). A lot of pre-trained ONNX models are provided for common scenarios.
+* Choose a pre-trained ONNX model from the [ONNX Model Zoo](https://github.com/onnx/models). Many pre-trained ONNX models are provided for common scenarios.
 * Use services like [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml) that generate customized ONNX models for your data
 * Convert models from various frameworks (see below)
+
+
 ## Converting to ONNX format
 | Framework / Tool | Installation | Tutorial | 
 | --- | --- | --- |
@@ -63,6 +66,7 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 
 ### ONNX as an intermediary format
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
+
 
 ### Conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
