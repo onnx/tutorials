@@ -57,6 +57,7 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 
 ### Serving
   * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
+  * [Serving ONNX models with ONNX Runtime Server](tutorials/OnnxRuntimeServerSSDModel.ipynb)
   * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
   * Serving ONNX models with ONNX Runtime on Azure ML
     * [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
