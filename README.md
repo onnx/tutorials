@@ -10,7 +10,7 @@ These images are available for convenience to get started with ONNX and tutorial
 ## Getting ONNX models
 
 * Pre-trained models: Many pre-trained ONNX models are provided for common scenarios in the [ONNX Model Zoo](https://github.com/onnx/models). 
-* Services: Customized ONNX models are generated for your data by cloud based services
+* Services: Customized ONNX models are generated for your data by cloud based services (see below)
 * Convert models from various frameworks (see below)
 
 ### Services
