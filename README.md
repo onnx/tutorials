@@ -9,12 +9,16 @@ These images are available for convenience to get started with ONNX and tutorial
 
 ## Getting ONNX models
 
-* Choose a pre-trained ONNX model from the [ONNX Model Zoo](https://github.com/onnx/models). Many pre-trained ONNX models are provided for common scenarios.
-* Use services like [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml) that generate customized ONNX models for your data
+* Pre-trained models: Many pre-trained ONNX models are provided for common scenarios in the [ONNX Model Zoo](https://github.com/onnx/models). 
+* Services: Customized ONNX models are generated for your data by cloud based services (see below)
 * Convert models from various frameworks (see below)
 
+### Services
+Below is a list of services that can output ONNX models customized for your data.
+* [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml)
+* [Azure Machine Learning automated ML](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-automated-ml#use-with-onnx-in-c-apps)
 
-## Converting to ONNX format
+### Converting to ONNX format
 | Framework / Tool | Installation | Tutorial | 
 | --- | --- | --- |
 | [Caffe](https://github.com/BVLC/caffe) | [apple/coremltools](https://github.com/apple/coremltools) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/caffe_coreml_onnx.ipynb) | 
