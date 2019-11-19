@@ -1,0 +1,3 @@
+/home/neraoof/CustomOperators/CustomOperator/ort_custom_op/build/CMakeFiles/rebuild_cache.dir
+/home/neraoof/CustomOperators/CustomOperator/ort_custom_op/build/CMakeFiles/customop.dir
+/home/neraoof/CustomOperators/CustomOperator/ort_custom_op/build/CMakeFiles/edit_cache.dir
