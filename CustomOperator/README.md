@@ -97,12 +97,14 @@ def my_group_norm(g, input, num_groups, scale, bias, eps):
     return g.op("mydomain::mygroupnorm", input, num_groups, scale, bias, epsilon_f=eps)
 
 from torch.onnx import register_custom_op_symbolic
-register_custom_op_symbolic('mynamespace::custom_group_norm', my_group_norm, 1)
+register_custom_op_symbolic('mynamespace::custom_group_norm', my_group_norm, 9)
 ```
 
 In the symbolic method, you need to implement the ONNX subgraph to use for exporting your custom op. If you are using existing ONNX operators (from the default ONNX domain), you don't have to add the domain name prefix.
 In our example, we want to use a custom ONNX op from our custom domain. Therefore, we need to add the domain name prefix in the following format:
 ```"<domain_name>::<onnx_op>"```
+
+If you want to assign a version when registering your custom domain, you can do that using ```torch.onnx.set_custom_domain_version``` API. Otherwise, version 1 will be assigned to the custom domain by default.
 
 Now, You can create a ```torch.nn.module``` using your custom op, and export it to ONNX using ```torch.onnx.export```. Make sure to specify input and output names at export, as this will help you later when implementing the kernel for this operator:
 
