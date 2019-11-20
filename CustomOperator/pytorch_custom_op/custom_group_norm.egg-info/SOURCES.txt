@@ -1,6 +1,0 @@
-custom_group_norm.cpp
-setup.py
-custom_group_norm.egg-info/PKG-INFO
-custom_group_norm.egg-info/SOURCES.txt
-custom_group_norm.egg-info/dependency_links.txt
-custom_group_norm.egg-info/top_level.txt

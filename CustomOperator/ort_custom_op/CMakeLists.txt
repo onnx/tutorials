@@ -8,10 +8,13 @@ set(HEADER custom_op.h)
 set(SOURCE custom_op.h)
 add_executable(customop ${SOURCE} ${HEADER} ${TEST_SOURCE})
 
-#Include path to header files
-include_directories(/home/neraoof/onnxruntime/cmake/external/eigen)
-include_directories(/home/neraoof/ort_build/onnxruntime-linux-x64-1.0.0/include)
+#Include path to header files for Custom Op
+include_directories(<PATH_TO_EIGEN_DIR>)
+include_directories(<PATH_TO_ONNXRUNTIME_INCLUDE_DIR>)
 
+#Include path to header files for Custom Op Test
+include_directories(<PATH_TO_ONNXRUNTIME_TEST_UTIL_INCLUDE_DIR>)
 
-find_library(ONNXRUNTIME_LIBRARY onnxruntime HINTS /home/neraoof/ort_build/onnxruntime-linux-x64-1.0.0/lib)
+#Linking dependencies for Custom Op
+find_library(ONNXRUNTIME_LIBRARY onnxruntime HINTS <PATH_TO_ONNXRUNTIME_LIB>)
 target_link_libraries(customop PUBLIC ${ONNXRUNTIME_LIBRARY})
