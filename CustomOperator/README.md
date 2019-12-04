@@ -1,3 +1,8 @@
+This document describes the required steps for extending TorchScript with a custom operator, exporting the operator to ONNX format, and adding the operator to ONNX Runtime for model inference.
+Although the ```torch``` module provides a broad set of tensor operators, TorchScript enables users to design and implement their custom (C++ or CUDA) function and register it as a new operator.
+To export such a custom operator to ONNX format, the custom op registration ONNX API enables users to export a custom TorchScript operator using a combination of existing and/or new custom ONNX ops.
+Once the operator is converted to ONNX format, users can implement and register it with ONNX Runtime for model inference. This document explains the details of this process end-to-end, along with an example.
+
 # Required Steps
 
   - [1](#step1) - Adding the custom operator implementation in C++ and registering it with TorchScript
@@ -10,8 +15,8 @@
 <a name="step1"></a>
 # Implement the Custom Operator
 For this step, you need to have PyTorch installed on your system. Try installing PyTorch nightly build from [here](https://pytorch.org/get-started/locally/).
-If you have a custom op that you need to add in PyTorch as a C++ extension, you need to implement the op and build it with ```setuptools```.
-Start by implementing the operator in C++. Below we have the example C++ code group norm operator:
+If you have a custom operator that you need to register in TorchScript as a C++ extension, you need to implement the operator and build it with ```setuptools```.
+Start by implementing the operator. You can leverage ATen, PyTorch's high-performance C++ tensor library. Below we have the example C++ code for the group norm operator:
 
 ```cpp
 #include <torch/script.h>
@@ -55,17 +60,17 @@ torch::Tensor custom_group_norm(torch::Tensor X, torch::Tensor num_groups, torch
   return output;
 }
 ```
-For this example, we use the [Eigen](https://eigen.tuxfamily.org/dox/index.html) library. To do this, we just need download and extract Eigen header files. You can find this library [here](https://eigen.tuxfamily.org/dox/GettingStarted.html).
+In this example, we use the [Eigen](https://eigen.tuxfamily.org/dox/index.html) library. To install this library, you just need to download and extract Eigen header files. You can find this library [here](https://eigen.tuxfamily.org/dox/GettingStarted.html).
 <br />
-Next, you need to register this operator with TorchScript compiler using ```torch::RegisterOperator``` function in the same cpp file. The first argument is operator name and namespace separated by ```::```. The next argument is a reference to your function. 
+Next, you need to register this operator with TorchScript compiler using ```torch::RegisterOperator``` function in the same cpp file. The first argument is operator namespace and name separated by ```::```. The next argument is a reference to your function. 
 
 ```cpp
 static auto registry = torch::RegisterOperators("mynamespace::custom_group_norm", &custom_group_norm);
 ```
 
-Once you have your C++ function, you can build it using ```setuptools.Extension```. Create a ```setup.py script``` in the same directory where you have your C++ code. ```CppExtension.BuildExtension``` Takes care of the required compiler flags such as required include paths, and flags required during mixed C++/CUDA mixed compilation.
+Once you have your C++ function, you can build it using ```setuptools.Extension```. Create a ```setup.py script``` in the same directory where you have your C++ code. ```CppExtension.BuildExtension``` takes care of the required compiler flags such as required include paths, and flags required during mixed C++/CUDA mixed compilation.
 
-For this example, we only provide the forward pass function needed for inferencing. Similarly, you can implement the backward pass if needed.
+For this example, we only provide the forward pass function needed for inference. Similarly, you can implement the backward pass if needed.
 
 ```python
 from setuptools import setup, Extension
@@ -91,7 +96,10 @@ Then you can refer to your custom operator:
 
 You can export your custom operator using existing ONNX ops, or you can create custom ONNX ops to use.
 In both cases, you need to add the symbolic method to the exporter, and register your custom symbolic using ```torch.onnx.register_custom_op_symbolic```.
-The first argument contains the namespace and operator name, separated by ```::```. You also need to pass a reference to the custom symbolic method, and the ONNX opset version. You can add your script in a python file under the source directory.
+The first argument contains the custom (TorchScript) namespace name and operator name, separated by ```::```. You also need to pass a reference to the custom symbolic method, and the ONNX opset version. Since the symbolic function could have a combination of ONNX and custom operators, providing the ONNX opset version is required at symbolic registration.
+Hence, you can only register a single version of your custom opset per each ONNX opset version.
+<br/>
+You can add your script in a python file under the source directory.
 ```python
 def my_group_norm(g, input, num_groups, scale, bias, eps):
     return g.op("mydomain::mygroupnorm", input, num_groups, scale, bias, epsilon_f=eps)
@@ -100,14 +108,13 @@ from torch.onnx import register_custom_op_symbolic
 register_custom_op_symbolic('mynamespace::custom_group_norm', my_group_norm, 9)
 ```
 
-In the symbolic method, you need to implement the ONNX subgraph to use for exporting your custom op. If you are using existing ONNX operators (from the default ONNX domain), you don't have to add the domain name prefix.
-In our example, we want to use a custom ONNX op from our custom domain. Therefore, we need to add the domain name prefix in the following format:
+In the symbolic method, you need to implement the ONNX subgraph to use for exporting your custom op.
+An ONNX opset consists of a domain name and a version number. If you are using existing ONNX operators (from the default ONNX domain), you don't need to add the domain name prefix.
+In our example, we want to use an op from our custom opset. Therefore, we need to add the domain name as a prefix in the following format:
 ```"<domain_name>::<onnx_op>"```
 
-If you want to assign a version when registering your custom domain, you can do that using ```torch.onnx.set_custom_domain_version``` API. Otherwise, version 1 will be assigned to the custom domain by default.
-
-Now, You can create a ```torch.nn.module``` using your custom op, and export it to ONNX using ```torch.onnx.export```. Make sure to specify input and output names at export, as this will help you later when implementing the kernel for this operator:
-
+Now, You can create a ```torch.nn.module``` using your custom op, and export it to ONNX using ```torch.onnx.export```. Make sure to specify input and output names at export, as this will help you later when implementing the ONNX Runtime kernel for this operator.
+You can pass the custom opset versions in the custom_opsests dictionary when calling the export API. If not explicitly specified, custom opset version is set to 1 by default.
 ```python 
 import torch
 
@@ -126,21 +133,22 @@ def export_custom_op():
     torch.onnx.export(CustomModel(), inputs, f,
                        opset_version=9,
                        example_outputs=None,
-                       input_names=["X", "num_groups", "scale", "bias"], output_names=["Y"])
+                       input_names=["X", "num_groups", "scale", "bias"], output_names=["Y"],
+                       custom_opsets={"mydomain": 2})
 ```
 
-To be able to use this custom ONNX operator for inferencing, we add our custom operator to an inference engine. If you are using existing ONNX ops only, you do not need to go through this last step.
+To be able to use this custom ONNX operator for inference, we add our custom operator to an inference engine. If you are using existing ONNX ops only, you do not need to go through this last step.
 
 <a name="step3"></a>
 # Implement the Operator in ONNX Runtime #
 
-The last step is to implement this op in ONNX Runtime, and build it. For this step, you need to have ONNX Runtime installed on your system. You can install ONNXRuntime v1.0.0 using:
+The last step is to implement this op in ONNX Runtime and build it. For this step, you need to have ONNX Runtime installed on your system. You can install ONNXRuntime v1.0.0 using:
 ```
 pip install onnxruntime
 ```
 or find the nuget package from [here](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/).
 
-The last step is to implement this op in ONNX Runtime, and build. We show how to do this using the custom operator C API's (API's are experimental for now).
+We illustrate how to add a new operator using ONNX RUntime's custom operator C API (API's are experimental for now).
 First, you need to create a custom domain of type ```Ort::CustomOpDomain```. This domain name is the same name provided in the symbolic method (step 2) when exporting the model.
 
 ```cpp

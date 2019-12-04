@@ -7,9 +7,6 @@ def register_custom_op():
 
     from torch.onnx import register_custom_op_symbolic, set_custom_domain_version
 
-    # Optional step: register custom domain version. If not registered, default version is 1
-    set_custom_domain_version("mydomain", 2)
-
     register_custom_op_symbolic("mynamespace::custom_group_norm", my_group_norm, 9)
 
 
@@ -26,9 +23,10 @@ def export_custom_op():
 
     f = './model.onnx'
     torch.onnx.export(CustomModel(), inputs, f,
-                       opset_version=9,
-                       example_outputs=None,
-                       input_names=["X", "num_groups", "scale", "bias"], output_names=["Y"])
+                      opset_version=9,
+                      example_outputs=None,
+                      input_names=["X", "num_groups", "scale", "bias"], output_names=["Y"],
+                      custom_opsets={"mydomain": 1})
 
 
 
