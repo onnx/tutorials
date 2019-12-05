@@ -72,6 +72,8 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 ### ONNX as an intermediary format
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
 
+### ONNX Custom Operators
+  * [Implementing Custom Operators in PyTorch, ONNX, and ONNX Runtime](PyTorchCustomOperator/README.md)
 
 ### Conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
