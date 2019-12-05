@@ -60,7 +60,7 @@ torch::Tensor custom_group_norm(torch::Tensor X, torch::Tensor num_groups, torch
   return output;
 }
 ```
-In this example, we use the [Eigen](https://eigen.tuxfamily.org/dox/index.html) library. To install this library, you just need to download and extract Eigen header files. You can find this library [here](https://eigen.tuxfamily.org/dox/GettingStarted.html).
+In this example, we use the [Eigen](https://eigen.tuxfamily.org/dox/index.html) library. To install this library, you need to download and extract Eigen header files. You can find this library [here](https://eigen.tuxfamily.org/dox/GettingStarted.html).
 <br />
 Next, you need to register this operator with TorchScript compiler using ```torch::RegisterOperator``` function in the same cpp file. The first argument is operator namespace and name separated by ```::```. The next argument is a reference to your function. 
 
@@ -68,7 +68,7 @@ Next, you need to register this operator with TorchScript compiler using ```torc
 static auto registry = torch::RegisterOperators("mynamespace::custom_group_norm", &custom_group_norm);
 ```
 
-Once you have your C++ function, you can build it using ```setuptools.Extension```. Create a ```setup.py script``` in the same directory where you have your C++ code. ```CppExtension.BuildExtension``` takes care of the required compiler flags such as required include paths, and flags required during mixed C++/CUDA mixed compilation.
+Once you have your C++ function, you can build it using ```setuptools.Extension```. Create a ```setup.py script``` in the same directory where you have your C++ code. ```CppExtension.BuildExtension``` takes care of the required compiler flags, such as required include paths and flags required during mixed C++/CUDA mixed compilation.
 
 For this example, we only provide the forward pass function needed for inference. Similarly, you can implement the backward pass if needed.
 
