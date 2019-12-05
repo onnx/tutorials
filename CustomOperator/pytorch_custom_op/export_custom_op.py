@@ -5,7 +5,7 @@ def register_custom_op():
     def my_group_norm(g, input, num_groups, scale, bias, eps):
         return g.op("mydomain::testgroupnorm", input, num_groups, scale, bias, epsilon_f=0.)
 
-    from torch.onnx import register_custom_op_symbolic, set_custom_domain_version
+    from torch.onnx import register_custom_op_symbolic
 
     register_custom_op_symbolic("mynamespace::custom_group_norm", my_group_norm, 9)
 

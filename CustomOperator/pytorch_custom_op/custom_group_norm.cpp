@@ -26,7 +26,7 @@ torch::Tensor custom_group_norm(torch::Tensor X, torch::Tensor num_groups, torch
     ConstEigenVectorArrayMap Xi(X_data + sample_size * i, sample_size);
     const float Xi_mean = Xi.mean();
     const float squared_norm = (Xi - Xi_mean).matrix().squaredNorm();
-    const float inv_stdev = 1.f / std::sqrt(squared_norm / sample_size + 0.);
+    const float inv_stdev = 1.f / std::sqrt(squared_norm / sample_size + eps);
     EigenVectorArrayMap Yi(out + sample_size * i, sample_size);
     const float channel_scale = inv_stdev * scale_data[i % (C * num_groups_i)];
     const float channel_shift = bias_data[i % (C * num_groups_i)] - Xi_mean * channel_scale;
