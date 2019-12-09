@@ -12,7 +12,7 @@ Once the operator is converted to ONNX format, users can implement and register 
   <br />             - a combination of existing ONNX ops
   <br />              or
   <br />              - a custom ONNX Operator
-  - [3](#step3) - Adding the custom operator implementation and registering it in ONNX Runtime
+  - [3](#step3) - Adding the custom operator implementation and registering it in ONNX Runtime (required only if using a custom ONNX op in step 2)
 
 <a name="step1"></a>
 ### Implement the Custom Operator
