@@ -6,17 +6,17 @@ using EigenVectorArrayMap = Eigen::Map<Eigen::Array<float, Eigen::Dynamic, 1>>;
 
 torch::Tensor custom_group_norm(torch::Tensor X, torch::Tensor num_groups, torch::Tensor scale, torch::Tensor bias, double eps) {
 
-	float* X_data = X.data<float>();
-	float* scale_data = scale.data<float>();
-	float* bias_data = bias.data<float>();
-	int num_groups_i = int(num_groups.data<float>()[0]);
+  float* X_data = X.data<float>();
+  float* scale_data = scale.data<float>();
+  float* bias_data = bias.data<float>();
+  int num_groups_i = int(num_groups.data<float>()[0]);
   torch::Tensor output = torch::zeros(X.sizes());
   float* out = output.data<float>();
   const int64_t N = X.size(0);
   const int64_t C = X.size(1) / num_groups_i;  // assume [N C*num_groups H W]  per the spec
 
   // Do computation
-	int64_t sample_size = 1;
+  int64_t sample_size = 1;
   for (auto i = 2; i < X.dim(); ++i) {
     sample_size *= X.size(i);
   }
