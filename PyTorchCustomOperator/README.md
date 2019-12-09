@@ -1,4 +1,4 @@
-## Implementing Custom Operators in PyTorch, ONNX, and ONNX Runtime
+## How to export Pytorch model with custom op to ONNX and run it in ONNX Runtime
 
 This document describes the required steps for extending TorchScript with a custom operator, exporting the operator to ONNX format, and adding the operator to ONNX Runtime for model inference.
 Although the ```torch``` module provides a broad set of tensor operators, TorchScript enables users to design and implement their custom (C++ or CUDA) function and register it as a new operator.
@@ -86,7 +86,7 @@ setup(name='custom_group_norm',
 
 Make sure to include required header files in ```include_dirs``` list.
 
-Now, running the command ```python setup.py install``` from your source directory, you can to build and install your extension.
+Now, running the command ```python setup.py install``` from your source directory, you can build and install your extension.
 The shared object should be generated under ```build``` directory. 
 You can load it using:
 ```torch.ops.load_library("<path_to_object_file>)```
@@ -144,13 +144,13 @@ To be able to use this custom ONNX operator for inference, we add our custom ope
 <a name="step3"></a>
 ### Implement the Operator in ONNX Runtime #
 
-The last step is to implement this op in ONNX Runtime and build it. For this step, you need to have ONNX Runtime installed on your system. You can install ONNXRuntime v1.0.0 using:
+The last step is to implement this op in ONNX Runtime and build it. For this step, you need to have ONNX Runtime installed on your system. You can install ONNX Runtime v1.0.0 using:
 ```
 pip install onnxruntime
 ```
 or find the nuget package from [here](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/).
 
-We illustrate how to add a new operator using ONNX RUntime's custom operator C API (API's are experimental for now).
+We illustrate how to add a new operator using ONNX Runtime's custom operator C API (API's are experimental for now).
 First, you need to create a custom domain of type ```Ort::CustomOpDomain```. This domain name is the same name provided in the symbolic method (step 2) when exporting the model.
 
 ```cpp
