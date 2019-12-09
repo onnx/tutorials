@@ -29,7 +29,7 @@ bool TestInference(Ort::Env& env, T model_uri,
   for (size_t i = 0; i < inputs.size(); i++) {
     input_names.emplace_back(inputs[i].name);
     input_tensors.emplace_back(Ort::Value::CreateTensor<float>(memory_info, const_cast<float*>(inputs[i].values.data()), inputs[i].values.size(), inputs[i].dims.data(), inputs[i].dims.size()));
-	}
+  }
 
   std::vector<Ort::Value> ort_outputs;
   ort_outputs = session.Run(Ort::RunOptions{nullptr}, input_names.data(), input_tensors.data(), input_tensors.size(), &output_name, 1);
@@ -55,7 +55,7 @@ bool TestInference(Ort::Env& env, T model_uri,
 
 int main(int argc, char** argv) {
 
-	Ort::Env env_= Ort::Env(ORT_LOGGING_LEVEL_INFO, "Default");
+  Ort::Env env_= Ort::Env(ORT_LOGGING_LEVEL_INFO, "Default");
 
   std::vector<Input> inputs(4);
   auto input = inputs.begin();
@@ -63,17 +63,17 @@ int main(int argc, char** argv) {
   input->dims = {3, 2, 1, 2};
   input->values = { 1.5410f, -0.2934f, -2.1788f,  0.5684f, -1.0845f, -1.3986f , 0.4033f,  0.8380f, -0.7193f, -0.4033f ,-0.5966f,  0.1820f};
 
-	input = std::next(input, 1);
+  input = std::next(input, 1);
   input->name = "num_groups";
   input->dims = {1};
   input->values = {2.f};
 
-	input = std::next(input, 1);
+  input = std::next(input, 1);
   input->name = "scale";
   input->dims = {2};
   input->values = {2.0f, 1.0f};
 
-	input = std::next(input, 1);
+  input = std::next(input, 1);
   input->name = "bias";
   input->dims = {2};
   input->values = {1.f, 0.f};
