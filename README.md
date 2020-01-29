@@ -68,7 +68,7 @@ Once you have an ONNX model, it can be scored with a variety of tools.
     * [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
     * [MNIST Handwritten Digits](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-mnist-deploy.ipynb)
     * [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
-  * [Inferencing ONNX models using ONNX Runtime Python API](https://microsoft.github.io/onnxruntime/python/auto_examples/plot_load_and_predict.html#sphx-glr-auto-examples-plot-load-and-predict-py)
+  * [Inferencing ONNX models using ONNX Runtime (Python, C#, C, Java, etc)](https://github.com/microsoft/onnxruntime/tree/master/samples)
 
 ### ONNX as an intermediary format
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
