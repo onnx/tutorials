@@ -59,23 +59,6 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 
 ## End-to-End Tutorials
 
-### Serving
-  * [Serving ONNX models with Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
-  * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
-  * [Serving ONNX models with ONNX Runtime Server](tutorials/OnnxRuntimeServerSSDModel.ipynb)
-  * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
-  * Serving ONNX models with ONNX Runtime on Azure ML
-    * [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
-    * [MNIST Handwritten Digits](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-mnist-deploy.ipynb)
-    * [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
-  * [Inferencing ONNX models using ONNX Runtime (Python, C#, C, Java, etc)](https://github.com/microsoft/onnxruntime/tree/master/samples)
-
-### ONNX as an intermediary format
-  * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
-
-### ONNX Custom Operators
-  * [How to export Pytorch model with custom op to ONNX and run it in ONNX Runtime](PyTorchCustomOperator/README.md)
-
 ### Conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
   * [Transferring SqueezeNet from PyTorch to Caffe2 with ONNX and to Android app](tutorials/PytorchCaffe2MobileSqueezeNet.ipynb)
@@ -86,7 +69,24 @@ Once you have an ONNX model, it can be scored with a variety of tools.
   * [Inference PyTorch Bert Model for High Performance in ONNX Runtime](tutorials/Inference-PyTorch-Bert-Model-for-High-Performance-in-ONNX-Runtime.ipynb)
   * [Inference TensorFlow Bert Model for High Performance in ONNX Runtime](tutorials/Inference-TensorFlow-Bert-Model-for-High-Performance-in-ONNX-Runtime.ipynb)
   * [Inference Bert Model for High Performance with ONNX Runtime on AzureML](tutorials/Inference-Bert-Model-for-High-Performance-with-ONNX-Runtime-on-AzureML.ipynb)
+  * [Various Samples: Inferencing ONNX models using ONNX Runtime (Python, C#, C, Java, etc)](https://github.com/microsoft/onnxruntime/tree/master/samples)
 
+### Serving
+  * [Serving ONNX models with Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
+  * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
+  * [Serving ONNX models with ONNX Runtime Server](tutorials/OnnxRuntimeServerSSDModel.ipynb)
+  * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
+  * Serving ONNX models with ONNX Runtime on Azure ML
+    * [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
+    * [MNIST Handwritten Digits](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-mnist-deploy.ipynb)
+    * [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
+    
+### ONNX as an intermediary format
+  * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
+
+### ONNX Custom Operators
+  * [How to export Pytorch model with custom op to ONNX and run it in ONNX Runtime](PyTorchCustomOperator/README.md)
+  
 ## Other ONNX tools
 
 * [Verifying correctness and comparing performance](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
