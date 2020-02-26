@@ -50,7 +50,7 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 | [Menoh](https://github.com/pfnet-research/menoh) | [Github Packages](https://github.com/pfnet-research/menoh/releases) or from [Nuget](https://www.nuget.org/packages/Menoh/) | [Example](tutorials/OnnxMenohHaskellImport.ipynb) |
 | [ML.NET](https://github.com/dotnet/machinelearning/) | [Microsoft.ML Nuget Package](https://www.nuget.org/packages/Microsoft.ML/) | [Example](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.OnnxTransformerTest/OnnxTransformTests.cs) |
 | [MXNet (Apache)](http://mxnet.incubator.apache.org/) - [Github](https://github.com/apache/incubator-mxnet/tree/master/python/mxnet/contrib/onnx) | [MXNet](http://mxnet.incubator.apache.org/versions/master/install/index.html?platform=Linux&language=Python&processor=CPU) |  [API](http://mxnet.incubator.apache.org/api/python/contrib/onnx.html)<br>[Example](tutorials/OnnxMxnetImport.ipynb) |
-[ONNX Runtime](https://github.com/microsoft/onnxruntime) | Python (Pypi) - [onnxruntime](https://pypi.org/project/onnxruntime/) and [onnxruntime-gpu](https://pypi.org/project/onnxruntime-gpu)<br>C/C# (Nuget) - [Microsoft.ML.OnnxRuntime](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/) and [Microsoft.ML.OnnxRuntime.Gpu](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime.Gpu/)| APIs: [Python](https://aka.ms/onnxruntime-python), [C#](https://github.com/Microsoft/onnxruntime/blob/master/docs/CSharp_API.md), [C](https://github.com/Microsoft/onnxruntime/blob/master/docs/C_API.md), [C++](https://github.com/Microsoft/onnxruntime/blob/master/onnxruntime/core/session/inference_session.h)<br>Examples - [Python](https://microsoft.github.io/onnxruntime/auto_examples/plot_load_and_predict.html#), [C#](https://github.com/Microsoft/onnxruntime/blob/master/csharp/test/Microsoft.ML.OnnxRuntime.Tests/InferenceTest.cs#L54), [C](https://github.com/Microsoft/onnxruntime/blob/master/csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests.Capi/C_Api_Sample.cpp) |
+[ONNX Runtime](https://github.com/microsoft/onnxruntime) | Python (Pypi) - [onnxruntime](https://pypi.org/project/onnxruntime/) and [onnxruntime-gpu](https://pypi.org/project/onnxruntime-gpu)<br>C/C# (Nuget) - [Microsoft.ML.OnnxRuntime](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/) and [Microsoft.ML.OnnxRuntime.Gpu](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime.Gpu/)| APIs: [Python](https://aka.ms/onnxruntime-python), [C#](https://github.com/Microsoft/onnxruntime/blob/master/docs/CSharp_API.md), [C](https://github.com/Microsoft/onnxruntime/blob/master/docs/C_API.md), [C++](https://github.com/Microsoft/onnxruntime/blob/master/onnxruntime/core/session/inference_session.h)<br>Examples - [Python](https://microsoft.github.io/onnxruntime/python/auto_examples/plot_load_and_predict.html#), [C#](https://github.com/Microsoft/onnxruntime/blob/master/csharp/test/Microsoft.ML.OnnxRuntime.Tests/InferenceTest.cs#L54), [C](https://github.com/Microsoft/onnxruntime/blob/master/csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests.Capi/C_Api_Sample.cpp) |
 | [SINGA (Apache)](http://singa.apache.org/) - [Github](https://github.com/apache/incubator-singa/blob/master/python/singa/sonnx.py) [experimental]| [built-in](https://github.com/apache/incubator-singa/blob/master/doc/en/docs/installation.md) | [Example](https://github.com/apache/incubator-singa/tree/master/examples/onnx) |
 | [Tensorflow](https://www.tensorflow.org/) | [onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) | [Example](tutorials/OnnxTensorflowImport.ipynb)|
 | [TensorRT](https://developer.nvidia.com/tensorrt) | [onnx-tensorrt](https://github.com/onnx/onnx-tensorrt) | [Example](https://github.com/onnx/onnx-tensorrt/blob/master/README.md) |
@@ -58,23 +58,6 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 
 
 ## End-to-End Tutorials
-
-### Serving
-  * [Serving ONNX models with Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
-  * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
-  * [Serving ONNX models with ONNX Runtime Server](tutorials/OnnxRuntimeServerSSDModel.ipynb)
-  * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
-  * Serving ONNX models with ONNX Runtime on Azure ML
-    * [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
-    * [MNIST Handwritten Digits](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-mnist-deploy.ipynb)
-    * [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
-  * [Inferencing ONNX models using ONNX Runtime Python API](https://microsoft.github.io/onnxruntime/auto_examples/plot_load_and_predict.html#sphx-glr-auto-examples-plot-load-and-predict-py)
-
-### ONNX as an intermediary format
-  * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
-
-### ONNX Custom Operators
-  * [How to export Pytorch model with custom op to ONNX and run it in ONNX Runtime](PyTorchCustomOperator/README.md)
 
 ### Conversion to deployment
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
@@ -86,7 +69,24 @@ Once you have an ONNX model, it can be scored with a variety of tools.
   * [Inference PyTorch Bert Model for High Performance in ONNX Runtime](tutorials/Inference-PyTorch-Bert-Model-for-High-Performance-in-ONNX-Runtime.ipynb)
   * [Inference TensorFlow Bert Model for High Performance in ONNX Runtime](tutorials/Inference-TensorFlow-Bert-Model-for-High-Performance-in-ONNX-Runtime.ipynb)
   * [Inference Bert Model for High Performance with ONNX Runtime on AzureML](tutorials/Inference-Bert-Model-for-High-Performance-with-ONNX-Runtime-on-AzureML.ipynb)
+  * [Various Samples: Inferencing ONNX models using ONNX Runtime (Python, C#, C, Java, etc)](https://github.com/microsoft/onnxruntime/tree/master/samples)
 
+### Serving
+  * [Serving ONNX models with Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
+  * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
+  * [Serving ONNX models with ONNX Runtime Server](tutorials/OnnxRuntimeServerSSDModel.ipynb)
+  * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
+  * [Serving ONNX models with ONNX Runtime on Azure ML](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/onnx)
+    * [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
+    * [MNIST Handwritten Digits](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-mnist-deploy.ipynb)
+    * [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
+    
+### ONNX as an intermediary format
+  * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
+
+### ONNX Custom Operators
+  * [How to export Pytorch model with custom op to ONNX and run it in ONNX Runtime](PyTorchCustomOperator/README.md)
+  
 ## Other ONNX tools
 
 * [Verifying correctness and comparing performance](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
