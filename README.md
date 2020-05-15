@@ -66,9 +66,9 @@ Once you have an ONNX model, it can be scored with a variety of tools.
   * [Serving PyTorch Models on AWS Lambda with Caffe2 & ONNX](https://machinelearnings.co/serving-pytorch-models-on-aws-lambda-with-caffe2-onnx-7b096806cfac)
   * [MXNet to ONNX to ML.NET with SageMaker, ECS and ECR](https://cosminsanda.com/posts/mxnet-to-onnx-to-ml.net-with-sagemaker-ecs-and-ecr/) - external link
   * [Convert CoreML YOLO model to ONNX, score with ONNX Runtime, and deploy in Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-convert-aml-deploy-tinyyolo.ipynb)
-  * [Inference PyTorch Bert Model for High Performance in ONNX Runtime](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/bert/notebooks/PyTorch_Bert-Squad_OnnxRuntime_GPU.ipynb)
-  * [Inference TensorFlow Bert Model for High Performance in ONNX Runtime](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/bert/notebooks/Tensorflow_Keras_Bert-Squad_OnnxRuntime_CPU.ipynb)
-  * [Inference Bert Model for High Performance with ONNX Runtime on AzureML](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/bert/notebooks/Inference_Bert_with_OnnxRuntime_on_AzureML.ipynb)
+  * [Inference PyTorch Bert Model for High Performance in ONNX Runtime](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/notebooks/PyTorch_Bert-Squad_OnnxRuntime_GPU.ipynb)
+  * [Inference TensorFlow Bert Model for High Performance in ONNX Runtime](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/notebooks/Tensorflow_Keras_Bert-Squad_OnnxRuntime_CPU.ipynb)
+  * [Inference Bert Model for High Performance with ONNX Runtime on AzureML](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/notebooks/Inference_Bert_with_OnnxRuntime_on_AzureML.ipynb)
   * [Various Samples: Inferencing ONNX models using ONNX Runtime (Python, C#, C, Java, etc)](https://github.com/microsoft/onnxruntime/tree/master/samples)
 
 ### Serving
