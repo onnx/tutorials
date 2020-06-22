@@ -43,7 +43,7 @@ Let's download the models.
 If you would like to train the models yourself, the pytorch/examples repository you just cloned has more information on how to do this.
 For now, we'll just download pre-trained models with the script provided by the repository:
 
-    ./download_saved_models.sh
+    ./download_saved_models.py
 
 This script downloads the pre-trained PyTorch models and puts them into the `saved_models` folder.
 There should now be 4 files, `candy.pth`, `mosaic.pth`, `rain_princess.pth` and `udnie.pth` in your directory.
