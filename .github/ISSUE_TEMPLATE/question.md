@@ -14,11 +14,12 @@ assignees: ''
 Explain your question here.
 
 ### Further information
-- Relevant Area (*e.g. model usage, backend, best practices, converters, shape_inference, version_converter, training, test, operators*): 
+- Relevant Area (*e.g. model usage, backend, best practices, shape_inference, version_converter, training, test, operators*): 
 
 - Is this issue related to a specific model?  
 **Model name** (*e.g. mnist*):  
-**Model opset** (*e.g. 7*):
+**Model opset** (*e.g. 7*):  
+**Please upload the model and provide the link if possible**
 
 ### Notes
 Any additional information, code snippets.
