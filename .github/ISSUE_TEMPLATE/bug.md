@@ -7,6 +7,7 @@ assignees: ''
 
 ---
 # Bug Report
+If the model conversion is failing for a **tutorial** in this repo, report the bug here. However, if the bug is related to general model conversion, please go to the appropriate converter repo.
 
 ### Describe the bug
 Please describe the bug clearly and concisely
