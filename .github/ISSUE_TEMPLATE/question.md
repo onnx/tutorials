@@ -19,7 +19,7 @@ Explain your question here.
 - Is this issue related to a specific model?  
 **Model name** (*e.g. mnist*):  
 **Model opset** (*e.g. 7*):  
-**Please upload the model and provide the link if possible**
+Please upload the model and provide the link if possible.
 
 ### Notes
 Any additional information, code snippets.
