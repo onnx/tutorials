@@ -10,7 +10,7 @@ assignees: ''
 If the model conversion is failing for a **tutorial** in this repo, report the bug here. However, if the bug is related to general model conversion, please go to the appropriate converter repo.
 
 ### Describe the bug
-Please describe the bug clearly and concisely
+Please describe the bug clearly and concisely.
 
 ### System information
 - OS Platform and Distribution (*e.g. Linux Ubuntu 16.04*):  
