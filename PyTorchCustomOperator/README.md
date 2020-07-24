@@ -200,7 +200,7 @@ struct GroupNormCustomOp : Ort::CustomOpBase<GroupNormCustomOp, GroupNormKernel<
 };
 ```
 
-The Compute function is implemented [in the source file](https://github.com/neginraoof/CustomOperators/blob/master/CuctomOperator/ort_custom_op/custom_op.cc).
+The Compute function is implemented [in the source file](https://github.com/onnx/tutorials/tree/master/PyTorchCustomOperator/ort_custom_op/custom_op.cc).
 Once you have the custom kernel and schema, you can add them to the domain using the C API as below:
 ```cpp
 GroupNormCustomOp custom_op;
@@ -221,11 +221,11 @@ And include the required headers using ```include_directories```
 include_directories(<PATH_TO_EIGEN_HEADER_FILE>)
 ```
 
-An example ```CMakeLists.txt``` file we could be found [here](https://github.com/neginraoof/CustomOperators/blob/master/CuctomOperator/ort_custom_op/CMakeLists.txt).
+An example ```CMakeLists.txt``` file we could be found [here](https://github.com/onnx/tutorials/tree/master/PyTorchCustomOperator/ort_custom_op/CMakeLists.txt).
 
 Once you have the cmake file, create a build directory from the same location and try ```cd build```. Execute the command ```cmake ..``` to configure the project and build it using ```make``` command.
 
-Now that you have registered your operator, you should be able to run your model and test it. You can find the source code and test for a sample custom operator [here](https://github.com/neginraoof/CustomOperators/blob/master/CuctomOperator/ort_custom_op/custom_op_test.cc). 
+Now that you have registered your operator, you should be able to run your model and test it. You can find the source code and test for a sample custom operator [here](https://github.com/onnx/tutorials/tree/master/PyTorchCustomOperator/ort_custom_op/custom_op_test.cc). 
 
 
 
