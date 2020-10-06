@@ -71,6 +71,9 @@ Once you have an ONNX model, it can be scored with a variety of tools.
   * [Inference Bert Model for High Performance with ONNX Runtime on AzureML](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/notebooks/Inference_Bert_with_OnnxRuntime_on_AzureML.ipynb)
   * [Various Samples: Inferencing ONNX models using ONNX Runtime (Python, C#, C, Java, etc)](https://github.com/microsoft/onnxruntime/tree/master/samples)
 
+### ONNX Quantization
+  * [HuggingFace Bert Quantization with ONNX Runtime](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/quantization/notebooks/Bert-GLUE_OnnxRuntime_quantization.ipynb)
+
 ### Serving
   * [Serving ONNX models with AI-Serving](https://github.com/autodeployai/ai-serving/blob/master/examples/AIServingMnistOnnxModel.ipynb)
   * [Serving ONNX models with Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
