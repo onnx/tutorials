@@ -1,8 +1,5 @@
 /**
- * Copyright (c) Facebook, Inc. and Microsoft Corporation.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 import Foundation
