@@ -1,5 +1,7 @@
 /**
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * Copyright (c) Facebook, Inc. and Microsoft Corporation.
  */
 
 import UIKit
