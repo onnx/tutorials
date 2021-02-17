@@ -91,14 +91,19 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 ### ONNX Custom Operators
   * [How to export Pytorch model with custom op to ONNX and run it in ONNX Runtime](PyTorchCustomOperator/README.md)
 
+## Visualizing ONNX Models
+
+* [Netdrawer: Visualizing ONNX models](tutorials/VisualizingAModel.md)
+* [Netron: Viewer for ONNX models](https://github.com/lutzroeder/Netron)
+* [Zetane: 3D visualizer for ONNX models and internal tensors](https://github.com/zetane/viewer)
+
 ## Other ONNX tools
 
 * [Verifying correctness and comparing performance](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
-* [Visualizing an ONNX model](tutorials/VisualizingAModel.md) (useful for debugging)
-* [Netron: a viewer for ONNX models](https://github.com/lutzroeder/Netron)
 * [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/master/onnx/examples/Protobufs.ipynb)
 * [Float16 <-> Float32 converter](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/float32_float16_onnx.ipynb)
 * [Version conversion](tutorials/VersionConversion.md)
+
 
 ## Contributing
 
