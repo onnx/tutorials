@@ -232,5 +232,5 @@ Now that you have registered your operator, you should be able to run your model
 ### References:
 1- [Extending TorchScript with Custom C++ Operators](https://pytorch.org/tutorials/advanced/torch_script_custom_ops.html)
 
-2- [ONNX Runtime: Adding a New Op](https://github.com/microsoft/onnxruntime/blob/master/docs/AddingCustomOp.md)
+2- [ONNX Runtime: Adding a New Op](https://www.onnxruntime.ai/docs/how-to/add-custom-op.html)
 
