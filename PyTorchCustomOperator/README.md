@@ -1,3 +1,4 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
 ## How to export Pytorch model with custom op to ONNX and run it in ONNX Runtime
 
 This document describes the required steps for extending TorchScript with a custom operator, exporting the operator to ONNX format, and adding the operator to ONNX Runtime for model inference.

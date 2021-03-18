@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # [ONNX](https://github.com/onnx/onnx) Tutorials
 
 [Open Neural Network Exchange (ONNX)](http://onnx.ai/) is an open standard format for representing machine learning models. ONNX is supported by [a community of partners](https://onnx.ai/supported-tools) who have implemented it in many frameworks and tools.
@@ -9,7 +11,7 @@ These images are available for convenience to get started with ONNX and tutorial
 
 ## Getting ONNX models
 
-* Pre-trained models: Many pre-trained ONNX models are provided for common scenarios in the [ONNX Model Zoo](https://github.com/onnx/models). 
+* Pre-trained models: Many pre-trained ONNX models are provided for common scenarios in the [ONNX Model Zoo](https://github.com/onnx/models).
 * Services: Customized ONNX models are generated for your data by cloud based services (see below)
 * Convert models from various frameworks (see below)
 
@@ -19,13 +21,13 @@ Below is a list of services that can output ONNX models customized for your data
 * [Azure Machine Learning automated ML](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-automated-ml#use-with-onnx-in-c-apps)
 
 ### Converting to ONNX format
-| Framework / Tool | Installation | Tutorial | 
+| Framework / Tool | Installation | Tutorial |
 | --- | --- | --- |
-| [Caffe](https://github.com/BVLC/caffe) | [apple/coremltools](https://github.com/apple/coremltools) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/caffe_coreml_onnx.ipynb) | 
-| [Caffe2](http://caffe2.ai) | [part of caffe2 package](https://github.com/pytorch/pytorch/tree/master/caffe2/python/onnx) | [Example](tutorials/Caffe2OnnxExport.ipynb) | 
+| [Caffe](https://github.com/BVLC/caffe) | [apple/coremltools](https://github.com/apple/coremltools) and [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/caffe_coreml_onnx.ipynb) |
+| [Caffe2](http://caffe2.ai) | [part of caffe2 package](https://github.com/pytorch/pytorch/tree/master/caffe2/python/onnx) | [Example](tutorials/Caffe2OnnxExport.ipynb) |
 | [Chainer](https://chainer.org/) | [chainer/onnx-chainer](https://github.com/chainer/onnx-chainer) | [Example](tutorials/ChainerOnnxExport.ipynb) |
-| [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) | [built-in](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine) | [Example](tutorials/CntkOnnxExport.ipynb) | 
-| [CoreML (Apple)](https://developer.apple.com/documentation/coreml) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/coreml_onnx.ipynb) | 
+| [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) | [built-in](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine) | [Example](tutorials/CntkOnnxExport.ipynb) |
+| [CoreML (Apple)](https://developer.apple.com/documentation/coreml) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/coreml_onnx.ipynb) |
 | [Keras](https://github.com/keras-team/keras) | [onnx/keras-onnx](https://github.com/onnx/keras-onnx) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/keras_onnx.ipynb) | n/a |
 | [LibSVM](https://github.com/cjlin1/libsvm) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/libsvm_onnx.ipynb) | n/a |
 | [LightGBM](https://github.com/Microsoft/LightGBM) | [onnx/onnxmltools](https://github.com/onnx/onnxmltools) | [Example](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/lightgbm_onnx.ipynb) | n/a |
@@ -41,7 +43,7 @@ Below is a list of services that can output ONNX models customized for your data
 ## Scoring ONNX Models
 Once you have an ONNX model, it can be scored with a variety of tools.
 
-| Framework / Tool | Installation | Tutorial | 
+| Framework / Tool | Installation | Tutorial |
 | --- | --- | --- |
 | [Caffe2](http://caffe2.ai) | [Caffe2](https://github.com/pytorch/pytorch/tree/master/caffe2/python/onnx) | [Example](tutorials/OnnxCaffe2Import.ipynb) |
 | [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) | [built-in](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine) | [Example](tutorials/OnnxCntkImport.ipynb)|
@@ -79,12 +81,12 @@ Once you have an ONNX model, it can be scored with a variety of tools.
   * [Serving ONNX models with Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
   * [Serving ONNX models with MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
   * [Serving ONNX models with ONNX Runtime Server](tutorials/OnnxRuntimeServerSSDModel.ipynb)
-  * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb) 
+  * [ONNX model hosting with AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb)
   * [Serving ONNX models with ONNX Runtime on Azure ML](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/onnx)
     * [FER Facial Expression Recognition](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
     * [MNIST Handwritten Digits](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-inference-mnist-deploy.ipynb)
     * [Resnet50 Image Classification](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
-    
+
 ### ONNX as an intermediary format
   * [Convert a PyTorch model to Tensorflow using ONNX](tutorials/PytorchTensorflowMnist.ipynb)
 

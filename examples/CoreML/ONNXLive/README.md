@@ -1,5 +1,7 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # ONNXLive Tutorial:
-This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple CoreML format using ONNX. This will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera. 
+This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple CoreML format using ONNX. This will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera.
 
 ## What is ONNX?
 ONNX (Open Neural Network Exchange) is an open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners. You can learn more about ONNX and what tools are supported by going to [onnx.ai](http://onnx.ai/).
@@ -24,7 +26,7 @@ We are also using Python 3.6 for this tutorial, but other versions should work a
 You need to install pytorch and the onnx->coreml converter
 
     pip install torchvision onnx-coreml
-    
+
 You will also need to install XCode if you want to run the iOS style transfer app on your iPhone.
 You can also convert models in Linux, however to run the iOS app itself, you will need a Mac.
 
@@ -92,16 +94,16 @@ So let's create a small python file and call it `onnx_to_coreml.py`. This can be
     import sys
     from onnx import onnx_pb
     from onnx_coreml import convert
-    
+
     model_in = sys.argv[1]
     model_out = sys.argv[2]
-    
+
     model_file = open(model_in, 'rb')
     model_proto = onnx_pb.ModelProto()
     model_proto.ParseFromString(model_file.read())
     coreml_model = convert(model_proto, image_input_names=['0'], image_output_names=['186'])
     coreml_model.save(model_out)
-    
+
 we now run it
 
     python onnx_to_coreml.py ./saved_models/candy.onnx ./saved_models/candy.mlmodel
@@ -116,7 +118,7 @@ Now, there should be 4 CoreML models in your `saved_models` directory: `candy.ml
 This repository (i.e. the one you're currently reading the README.md of) contains an iOS app able to run CoreML style transfer models on a live camera stream from your phone camera. Let's clone the repository
 
     git clone https://github.com/onnx/tutorials
-    
+
 and open the `tutorials/examples/CoreML/ONNXLive/ONNXLive.xcodeproj` project in XCode.
 We recommend using XCode 9.3 and an iPhone X. There might be issues running on older devices or XCode versions.
 
