@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 ## Version Conversion
 
 The ONNX [Version Converter](https://github.com/onnx/onnx/blob/master/docs/VersionConverter.md) helps convert ONNX models to the version needed by the runtime you are using.

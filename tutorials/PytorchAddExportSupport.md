@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 ## Fail to export the model in PyTorch
 When you try to export a model, you may receive a message similar to the following:
 ```
@@ -34,7 +36,7 @@ dispatch is done with keyword arguments.
 - Parameter ordering does NOT necessarily match what is in `VariableType.h`.
 Tensors (inputs) are always first, followed by non-tensor arguments.
 - In the symbolic function, if the target op is already standarized in ONNX,
-we just need to create a node to represent the ONNX operator in the graph. 
+we just need to create a node to represent the ONNX operator in the graph.
 Here is an example to create a node for the `Elu` ONNX operator:
 `g.op("Elu", input, alpha_f=_scalar(alpha))`. More details are included in
 [API section](#api).

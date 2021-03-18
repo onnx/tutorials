@@ -1,3 +1,7 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 #include <iostream>
 #include "Eigen/Dense"
 #include "onnxruntime_cxx_api.h"

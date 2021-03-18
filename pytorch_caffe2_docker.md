@@ -1,3 +1,5 @@
+<!--- SPDX-License-Identifier: Apache-2.0 -->
+
 # Caffe2/PyTorch Docker
 
 Docker images (CPU-only and GPU versions) with ONNX, PyTorch, and Caffe2 are available for quickly trying tutorials that use ONNX. To quickly try CPU-only version, simply run:
