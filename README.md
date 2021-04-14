@@ -19,6 +19,7 @@ These images are available for convenience to get started with ONNX and tutorial
 Below is a list of services that can output ONNX models customized for your data.
 * [Azure Custom Vision service](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/custom-vision-onnx-windows-ml)
 * [Azure Machine Learning automated ML](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-automated-ml#use-with-onnx-in-c-apps)
+* [Lobe desktop app](https://lobe.ai)
 
 ### Converting to ONNX format
 | Framework / Tool | Installation | Tutorial |
