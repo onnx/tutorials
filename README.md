@@ -85,7 +85,7 @@ Tutorials demonstrating how to use ONNX in practice for varied scenarios across 
 
 
 ### ONNX Quantization
-  * [HuggingFace Bert Quantization with ONNX Runtime](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/quantization/notebooks/Bert-GLUE_OnnxRuntime_quantization.ipynb)
+  * [HuggingFace Bert Quantization with ONNX Runtime](https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/quantization/notebooks/bert/Bert-GLUE_OnnxRuntime_quantization.ipynb)
 
 
 ### ONNX as an intermediary format
