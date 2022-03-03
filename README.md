@@ -37,7 +37,7 @@ Below is a list of services that can output ONNX models customized for your data
 | [MXNet (Apache)](https://mxnet.incubator.apache.org/) | part of mxnet package [docs](https://mxnet.incubator.apache.org/api/python/contrib/onnx.html) [github](https://github.com/apache/incubator-mxnet/tree/master/python/mxnet/contrib/onnx) | [Example](tutorials/MXNetONNXExport.ipynb) |
 | [PyTorch](https://pytorch.org/) | [part of pytorch package](https://pytorch.org/docs/master/onnx.html) | [Example1](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html), [Example2](tutorials/PytorchOnnxExport.ipynb), [export for Windows ML](tutorials/ExportModelFromPyTorchForWinML.md), [Extending support](tutorials/PytorchAddExportSupport.md) |
 | [SciKit-Learn](https://scikit-learn.org/) | [onnx/sklearn-onnx](https://github.com/onnx/sklearn-onnx) | [Example](https://onnx.ai/sklearn-onnx/index.html) | n/a |
-| [SINGA (Apache)](https://singa.apache.org/) - [Github](https://github.com/apache/incubator-singa/blob/master/python/singa/sonnx.py) (experimental) | [built-in](https://github.com/apache/incubator-singa/blob/master/doc/en/docs/installation.md) | [Example](https://github.com/apache/incubator-singa/tree/master/examples/onnx) |
+| [SINGA (Apache)](https://singa.apache.org/) - [Github](https://github.com/apache/incubator-singa/blob/master/python/singa/sonnx.py) (experimental) | [built-in](https://singa.apache.org/docs/installation/) | [Example](https://github.com/apache/incubator-singa/tree/master/examples/onnx) |
 | [TensorFlow](https://www.tensorflow.org/) | [onnx/tensorflow-onnx](https://github.com/onnx/tensorflow-onnx) | [Examples](https://github.com/onnx/tutorials/blob/master/tutorials/TensorflowToOnnx-1.ipynb) |
 
 
@@ -52,13 +52,13 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 | [MATLAB](https://www.mathworks.com/) | [Deep Learning Toolbox Converter](https://www.mathworks.com/matlabcentral/fileexchange/67296) | [Documentation and Examples](https://www.mathworks.com/help/deeplearning/ref/importonnxnetwork.html) |
 | [Menoh](https://github.com/pfnet-research/menoh) | [Github Packages](https://github.com/pfnet-research/menoh/releases) or from [Nuget](https://www.nuget.org/packages/Menoh/) | [Example](tutorials/OnnxMenohHaskellImport.ipynb) |
 | [ML.NET](https://github.com/dotnet/machinelearning/) | [Microsoft.ML Nuget Package](https://www.nuget.org/packages/Microsoft.ML/) | [Example](https://github.com/dotnet/machinelearning/blob/master/test/Microsoft.ML.OnnxTransformerTest/OnnxTransformTests.cs) |
-| [MXNet (Apache)](https://mxnet.incubator.apache.org/) - [Github](https://github.com/apache/incubator-mxnet/tree/master/python/mxnet/contrib/onnx) | [MXNet](https://mxnet.incubator.apache.org/versions/master/install/index.html?platform=Linux&language=Python&processor=CPU) |  [API](https://mxnet.incubator.apache.org/api/python/contrib/onnx.html)<br>[Example](tutorials/OnnxMxnetImport.ipynb) |
+| [MXNet (Apache)](https://mxnet.incubator.apache.org/) - [Github](https://github.com/apache/incubator-mxnet/tree/master/python/mxnet/contrib/onnx) | [MXNet](https://mxnet.incubator.apache.org/versions/master/install/index.html?platform=Linux&language=Python&processor=CPU) |  [API](https://mxnet.incubator.apache.org/api/python/contrib/onnx.html) <br>[Example](tutorials/OnnxMxnetImport.ipynb) |
 [ONNX Runtime](https://github.com/microsoft/onnxruntime) | See [onnxruntime.ai](https://onnxruntime.ai)| [Documentation](https://onnxruntime.ai/docs/) |
-| [SINGA (Apache)](https://singa.apache.org/) - [Github](https://github.com/apache/incubator-singa/blob/master/python/singa/sonnx.py) [experimental]| [built-in](https://github.com/apache/incubator-singa/blob/master/doc/en/docs/installation.md) | [Example](https://github.com/apache/incubator-singa/tree/master/examples/onnx) |
+| [SINGA (Apache)](https://singa.apache.org/) - [Github](https://github.com/apache/incubator-singa/blob/master/python/singa/sonnx.py) [experimental]| [built-in](https://singa.apache.org/docs/installation/) | [Example](https://github.com/apache/incubator-singa/tree/master/examples/onnx) |
 | [Tensorflow](https://www.tensorflow.org/) | [onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) | [Example](tutorials/OnnxTensorflowImport.ipynb)|
 | [TensorRT](https://developer.nvidia.com/tensorrt) | [onnx-tensorrt](https://github.com/onnx/onnx-tensorrt) | [Example](https://github.com/onnx/onnx-tensorrt/blob/master/README.md) |
-| [Windows ML](https://docs.microsoft.com/en-us/windows/ai/windows-ml) | Pre-installed on [Windows 10](https://docs.microsoft.com/en-us/windows/ai/release-notes) | [API](https://docs.microsoft.com/en-us/windows/ai/api-reference)<br>Tutorials - [C++ Desktop App](https://docs.microsoft.com/en-us/windows/ai/get-started-desktop), [C# UWP App](https://docs.microsoft.com/en-us/windows/ai/get-started-uwp)<br> [Examples](https://docs.microsoft.com/en-us/windows/ai/tools-and-samples) |
-| [Vespa.ai](https://vespa.ai) | [Vespa Getting Started Guide](https://docs.vespa.ai/en/getting-started.html) | [Real Time ONNX Inference](https://github.com/vespa-engine/sample-apps/tree/master/model-evaluation)<br>Distributed Real Time ONNX Inference for [Search and Passage Ranking](https://github.com/vespa-engine/sample-apps/blob/master/msmarco-ranking/passage-ranking.md)|
+| [Windows ML](https://docs.microsoft.com/en-us/windows/ai/windows-ml) | Pre-installed on [Windows 10](https://docs.microsoft.com/en-us/windows/ai/release-notes) | [API](https://docs.microsoft.com/en-us/windows/ai/api-reference) <br>Tutorials - [C++ Desktop App](https://docs.microsoft.com/en-us/windows/ai/get-started-desktop), [C# UWP App](https://docs.microsoft.com/en-us/windows/ai/get-started-uwp) <br> [Examples](https://docs.microsoft.com/en-us/windows/ai/tools-and-samples) |
+| [Vespa.ai](https://vespa.ai) | [Vespa Getting Started Guide](https://docs.vespa.ai/en/getting-started.html) | [Real Time ONNX Inference](https://github.com/vespa-engine/sample-apps/tree/master/model-evaluation) <br>Distributed Real Time ONNX Inference for [Search and Passage Ranking](https://github.com/vespa-engine/sample-apps/blob/master/msmarco-ranking/passage-ranking.md)|
 
 
 ## End-to-End Tutorials
@@ -66,7 +66,7 @@ Tutorials demonstrating how to use ONNX in practice for varied scenarios across 
 
 ### General
   * [AI-Serving](https://github.com/autodeployai/ai-serving/blob/master/examples/AIServingMnistOnnxModel.ipynb)
-  * [AWS Lambda](https://machinelearnings.co/serving-pytorch-models-on-aws-lambda-with-caffe2-onnx-7b096806cfac)
+  * [AWS Lambda](https://github.com/michaelulin/pytorch-caffe2-aws-lambda)
   * [Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
   * MXNet
     * [MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
@@ -81,7 +81,7 @@ Tutorials demonstrating how to use ONNX in practice for varied scenarios across 
   * [Converting SuperResolution model from PyTorch to Caffe2 with ONNX and deploying on mobile device](tutorials/PytorchCaffe2SuperResolution.ipynb)
   * [Transferring SqueezeNet from PyTorch to Caffe2 with ONNX and to Android app](tutorials/PytorchCaffe2MobileSqueezeNet.ipynb)
   * [Converting Style Transfer model from PyTorch to CoreML with ONNX and deploying to an iPhone](https://github.com/onnx/tutorials/tree/master/examples/CoreML/ONNXLive)
-  * [Deploy ONNX Runtime on Mobile/Edge devices](https://onnxruntime.ai/docs/how-to/mobile/)
+  * [Deploy ONNX Runtime on Mobile/Edge devices](https://onnxruntime.ai/docs/tutorials/mobile/)
 
 
 

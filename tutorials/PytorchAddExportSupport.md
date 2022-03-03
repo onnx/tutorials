@@ -24,12 +24,12 @@ importer (such as onnx-caffe2) developers, as additional work is required.
 ### How to add support to export an operator in PyTorch
 #### Condition 1: If the operator in PyTorch is an ATen operator...
 To determine whether the operator is an ATen operator or not, check
-[`torch/csrc/autograd/generated/VariableType.h`](https://bddppq.github.io/codebrowser/pytorch/pytorch/torch/csrc/autograd/generated/VariableType.h) (available within generated code in the PyTorch install dir). If you find the corresponding function in this header file, it's most likely an ATen operator.
+[`torch/csrc/autograd/generated/VariableType.h`](https://codebrowser.bddppq.com/pytorch/pytorch/torch/csrc/autograd/generated/VariableType.h.html) (available within generated code in the PyTorch install dir). If you find the corresponding function in this header file, it's most likely an ATen operator.
 
 **Define symbolic functions.** In this case, you should obey the following rules.
 - Define the symbolic function in [`torch/onnx/symbolic.py`](https://github.com/pytorch/pytorch/blob/master/torch/onnx/symbolic_helper.py). Make sure the
 function has the same name as the ATen operator/function defined in
-[`VariableType.h`](https://bddppq.github.io/codebrowser/pytorch/pytorch/torch/csrc/autograd/generated/VariableType.h).
+[`VariableType.h`](https://codebrowser.bddppq.com/pytorch/pytorch/torch/csrc/autograd/generated/VariableType.h.html).
 - The first parameter is always the exported ONNX graph.
 - Parameter names must match the names in `VariableType.h` EXACTLY, because
 dispatch is done with keyword arguments.

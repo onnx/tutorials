@@ -1,12 +1,24 @@
 import os
 from re import findall
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 from sys import exit
 
 
+SKIP_URLS_LIST = ["https://127.0.0",
+                  # Used for server demo code
+                  "https://www.cntk.ai/Models/CNTK_Pretrained/ResNet20_CIFAR10_CNTK.model"
+                  # [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid
+                  ]
+
+
 def validate_url(url):
+    for skip_url in SKIP_URLS_LIST:
+        if skip_url in url:
+            return True
     try:
-        with urlopen(url) as response:
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
+        request = Request(url, headers=headers)
+        with urlopen(request) as response:
             status_code = response.getcode()
             # if the request succeeds
             if status_code == 200:
@@ -14,15 +26,15 @@ def validate_url(url):
             else:
                 print(f"{url}: is Not reachable, status_code: {status_code}.")
                 return False
-
     except Exception as e:
         print(f"{url}: is Not reachable, Exception: {e}")
         return False
 
 
 def polish_url(url):
-    """ Trim ,\n.) in the end """
+    """ Trim , \n . ) 's in the end """
     url = url.replace("\\n", "")
+    url = url.replace("'s", "")
     for i in range(len(url)):
         if url[len(url) - i - 1].isalpha() or url[len(url) - i - 1].isdigit():
             return url[:len(url) - i]
