@@ -4,7 +4,7 @@
 This tutorial will show you to convert a neural style transfer model that has been exported from PyTorch and into the Apple CoreML format using ONNX. This will allow you to easily run deep learning models on Apple devices and, in this case, live stream from the camera.
 
 ## What is ONNX?
-ONNX (Open Neural Network Exchange) is an open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners. You can learn more about ONNX and what tools are supported by going to [onnx.ai](http://onnx.ai/).
+ONNX (Open Neural Network Exchange) is an open format to represent deep learning models. With ONNX, AI developers can more easily move models between state-of-the-art tools and choose the combination that is best for them. ONNX is developed and supported by a community of partners. You can learn more about ONNX and what tools are supported by going to [onnx.ai](https://onnx.ai/).
 
 ## Tutorial Overview
 
