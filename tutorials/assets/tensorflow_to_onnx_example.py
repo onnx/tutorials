@@ -24,19 +24,11 @@ https://www.tensorflow.org/get_started/mnist/pros
 # pylint: disable=invalid-name
 # pylint: disable=g-bad-import-order
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
-import argparse
-import sys
 import os
 import shutil
-import tempfile
-
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
-
 
 
 def add(x, y):
@@ -161,22 +153,28 @@ def create_and_train_mnist():
     for i in range(5000):
         batch = mnist.train.next_batch(50)
         if i % 1000 == 0:
-            train_accuracy = accuracy.eval(session=sess, feed_dict={input_tensor: batch[0], y_: batch[1]})
+            train_accuracy = accuracy.eval(
+                session=sess, feed_dict={
+                    input_tensor: batch[0], y_: batch[1]})
             print('step %d, training accuracy %g' % (i, train_accuracy))
         train_step.run(session=sess, feed_dict={input_tensor: batch[0], y_: batch[1]})
 
-    print('test accuracy %g' % accuracy.eval(session=sess, feed_dict={input_tensor: mnist.test.images[:1000], y_: mnist.test.labels[:1000]}))
+    print('test accuracy %g' % accuracy.eval(session=sess, feed_dict={
+          input_tensor: mnist.test.images[:1000], y_: mnist.test.labels[:1000]}))
     return sess, saver, input_tensor, output_tensor
+
 
 def save_model_to_checkpoint(saver, sess):
     print("save model to checkpoint")
-    save_path = saver.save(sess, "./output/ckpt/model.ckpt")
+    saver.save(sess, "./output/ckpt/model.ckpt")
+
 
 def save_model_to_frozen_proto(sess):
     print('save model to frozen graph')
     frozen_graph = tf.graph_util.convert_variables_to_constants(sess, sess.graph_def, ["result"])
     with open("./output/mnist_frozen.pb", "wb") as file:
-         file.write(frozen_graph.SerializeToString())
+        file.write(frozen_graph.SerializeToString())
+
 
 def save_model_to_saved_model(sess, input_tensor, output_tensor):
     print('save model to saved_model')
@@ -185,4 +183,3 @@ def save_model_to_saved_model(sess, input_tensor, output_tensor):
     if os.path.exists(save_path):
         shutil.rmtree(save_path)
     simple_save(sess, save_path, {input_tensor.name: input_tensor}, {output_tensor.name: output_tensor})
-

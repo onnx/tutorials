@@ -3,11 +3,12 @@ from re import findall
 from urllib.request import urlopen
 from sys import exit
 
+
 def validate_url(url):
     try:
         with urlopen(url) as response:
             status_code = response.getcode()
-            # if the request succeeds 
+            # if the request succeeds
             if status_code == 200:
                 return True
             else:
@@ -18,13 +19,14 @@ def validate_url(url):
         print(f"{url}: is Not reachable, Exception: {e}")
         return False
 
-# Trim ,\n.) in the end
+
 def polish_url(url):
+    """ Trim ,\n.) in the end """
     url = url.replace("\\n", "")
     for i in range(len(url)):
-        if url[len(url)-i-1].isalpha() or url[len(url)-i-1].isdigit():
-            return url[:len(url)-i]
-    return url 
+        if url[len(url) - i - 1].isalpha() or url[len(url) - i - 1].isdigit():
+            return url[:len(url) - i]
+    return url
 
 
 def validate_file(file_path):
@@ -32,7 +34,9 @@ def validate_file(file_path):
     if file_path.endswith(".ipynb") or file_path.endswith(".md"):
         with open(file_path, "r") as f:
             for line in f:
-                url_list = findall(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", line)
+                url_list = findall(
+                    r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+",
+                    line)
                 for url in url_list:
                     url = polish_url(url)
                     if not validate_url(url):
@@ -41,14 +45,14 @@ def validate_file(file_path):
                 if "http://" in line:
                     print(f"File {file_path} contains an insecure url: {line}")
                     has_invalid_url = True
-        
+
     return not has_invalid_url
 
 
 def validate_urls_under_directory(directory):
     total_count = 0
     invalid_url_count = 0
-    
+
     for root, _, files in os.walk(directory):
         for file_name in files:
             file_path = os.path.join(root, file_name)
