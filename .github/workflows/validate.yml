@@ -34,6 +34,7 @@ jobs:
 
     - name: Validate changed URLs from this PR
       run: |
+        git fetch --all
         python workflow_scripts/validate_changed_urls.py
 
     - name: Weekly validate all URLs under onnx/tutorials
