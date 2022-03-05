@@ -5,7 +5,7 @@ import subprocess
 
 def get_changed_files():
     try:
-        files = subprocess.check_output(["git", "diff", "--name-only", "main"])
+        files = subprocess.check_output(["git", "diff", "--name-only", "main", "--"])
     except subprocess.CalledProcessError as ex:
         return ex.output
     return files.decode("utf-8").split("\n")
