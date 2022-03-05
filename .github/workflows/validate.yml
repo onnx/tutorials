@@ -16,8 +16,10 @@ jobs:
       matrix:
         python-version: ['3.9',]
         architecture: ['x64']
-
     steps:
+    - name: Checkout onnx/tutorials
+      uses: actions/checkout@v2
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
