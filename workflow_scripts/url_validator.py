@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 from re import findall
 from urllib.request import Request, urlopen
 

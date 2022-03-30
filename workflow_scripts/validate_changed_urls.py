@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+
 from os.path import exists
 from url_validator import validate_file
 import subprocess
