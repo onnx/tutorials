@@ -22,7 +22,7 @@ Let's walk through an example visualizing a [SqueezeNet](https://arxiv.org/abs/1
 ![SqueezeNet Visualization](assets/squeezenet.png)
 
 **Prerequisites**
-* You will need [Graphviz](http://www.graphviz.org/) – specifically, the `dot` command-line utility.
+* You will need [Graphviz](https://www.graphviz.org/) – specifically, the `dot` command-line utility.
 * You'll need the `pydot` Python package.
 * For the net drawer, you will need [ONNX](https://github.com/onnx/onnx), both installed and cloned somewhere (so that you have access to the `net_drawer.py` file).
 * For the optional part (i.e., experimentation), you'll need PyTorch and Numpy.
