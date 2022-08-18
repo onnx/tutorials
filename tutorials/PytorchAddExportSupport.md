@@ -110,7 +110,7 @@ class Graph(object):
     operators).
 
     The set of operators and the inputs/attributes they take
-    is documented at https://github.com/onnx/onnx/blob/master/docs/Operators.md
+    is documented at https://github.com/onnx/onnx/blob/main/docs/Operators.md
 
     Arguments:
         opname (string): The ONNX operator name, e.g., `Abs` or `Add`.

@@ -4,10 +4,6 @@
 
 [Open Neural Network Exchange (ONNX)](https://onnx.ai/) is an open standard format for representing machine learning models. ONNX is supported by [a community of partners](https://onnx.ai/supported-tools) who have implemented it in many frameworks and tools.
 
-These images are available for convenience to get started with ONNX and tutorials on this page
-  * [Docker image for ONNX and Caffe2/PyTorch](pytorch_caffe2_docker.md)
-  * [Docker image for ONNX, ONNX Runtime, and various converters](https://github.com/onnx/onnx-docker/tree/master/onnx-ecosystem)
-
 
 ## Getting ONNX models
 
@@ -104,13 +100,13 @@ Tutorials demonstrating how to use ONNX in practice for varied scenarios across 
 ## Other ONNX tools
 
 * [Verifying correctness and comparing performance](tutorials/CorrectnessVerificationAndPerformanceComparison.ipynb)
-* [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/master/onnx/examples/Protobufs.ipynb)
+* [Example of operating on ONNX protobuf](https://github.com/onnx/onnx/blob/main/onnx/examples/Protobufs.ipynb)
 * [Float16 <-> Float32 converter](https://github.com/onnx/onnx-docker/blob/master/onnx-ecosystem/converter_scripts/float32_float16_onnx.ipynb)
 * [Version conversion](tutorials/VersionConversion.md)
 
 
 ## Contributing
 
-We welcome improvements to the convertor tools and contributions of new ONNX bindings. Check out [contributor guide](https://github.com/onnx/onnx/blob/master/docs/CONTRIBUTING.md) to get started.
+We welcome improvements to the convertor tools and contributions of new ONNX bindings. Check out [contributor guide](https://github.com/onnx/onnx/blob/main/docs/CONTRIBUTING.md) to get started.
 
 Use ONNX for something cool? Send the tutorial to this repo by submitting a PR.

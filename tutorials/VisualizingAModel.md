@@ -3,7 +3,7 @@
 Visualizing an ONNX Model
 =========================
 
-To visualize an ONNX model, we can use the [net drawer tool](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py). This tool takes in a serialized ONNX model and produces a directed graph representation. The graph contains the following information:
+To visualize an ONNX model, we can use the [net drawer tool](https://github.com/onnx/onnx/blob/main/onnx/tools/net_drawer.py). This tool takes in a serialized ONNX model and produces a directed graph representation. The graph contains the following information:
 
 * Tensors
    * Input/output tensors

@@ -2,7 +2,7 @@
 
 ## Version Conversion
 
-The ONNX [Version Converter](https://github.com/onnx/onnx/blob/master/docs/VersionConverter.md) helps convert ONNX models to the version needed by the runtime you are using.
+The ONNX [Version Converter](https://github.com/onnx/onnx/blob/main/docs/VersionConverter.md) helps convert ONNX models to the version needed by the runtime you are using.
 
 Version Conversion for BatchNormalization from opset 8 to 9:
 
