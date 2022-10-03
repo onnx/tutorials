@@ -54,7 +54,7 @@ Once you have an ONNX model, it can be scored with a variety of tools.
 | [Tensorflow](https://www.tensorflow.org/) | [onnx-tensorflow](https://github.com/onnx/onnx-tensorflow) | [Example](tutorials/OnnxTensorflowImport.ipynb)|
 | [TensorRT](https://developer.nvidia.com/tensorrt) | [onnx-tensorrt](https://github.com/onnx/onnx-tensorrt) | [Example](https://github.com/onnx/onnx-tensorrt/blob/master/README.md) |
 | [Windows ML](https://docs.microsoft.com/en-us/windows/ai/windows-ml) | Pre-installed on [Windows 10](https://docs.microsoft.com/en-us/windows/ai/release-notes) | [API](https://docs.microsoft.com/en-us/windows/ai/api-reference) <br>Tutorials - [C++ Desktop App](https://docs.microsoft.com/en-us/windows/ai/get-started-desktop), [C# UWP App](https://docs.microsoft.com/en-us/windows/ai/get-started-uwp) <br> [Examples](https://docs.microsoft.com/en-us/windows/ai/tools-and-samples) |
-| [Vespa.ai](https://vespa.ai) | [Vespa Getting Started Guide](https://docs.vespa.ai/en/getting-started.html) | [Real Time ONNX Inference](https://github.com/vespa-engine/sample-apps/tree/master/model-inference) <br>Distributed Real Time ONNX Inference for [Search and Passage Ranking](https://github.com/vespa-engine/sample-apps/blob/master/msmarco-ranking/passage-ranking.md)|
+| [Vespa.ai](https://vespa.ai) | [Vespa Getting Started Guide](https://docs.vespa.ai/en/getting-started.html) | [Real Time ONNX Inference](https://github.com/vespa-engine/sample-apps/tree/master/model-inference) <br>Distributed Real Time ONNX Inference for [Search and Passage Ranking](https://github.com/vespa-engine/sample-apps/blob/master/msmarco-ranking/passage-ranking-README.md)|
 
 
 ## End-to-End Tutorials
