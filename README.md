@@ -66,7 +66,7 @@ Tutorials demonstrating how to use ONNX in practice for varied scenarios across 
   * [Cortex](https://towardsdatascience.com/how-to-deploy-onnx-models-in-production-60bd6abfd3ae)
   * MXNet
     * [MXNet Model Server](tutorials/ONNXMXNetServer.ipynb)
-    * [AWS SageMaker and MXNet](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb)
+    * [AWS SageMaker and MXNet](https://github.com/aws/amazon-sagemaker-examples/blob/v0.1.0/sagemaker-python-sdk/mxnet_onnx_eia/mxnet_onnx_eia.ipynb)
     * [MXNet to ONNX to ML.NET with SageMaker, ECS and ECR](https://cosminsanda.com/posts/mxnet-to-onnx-to-ml.net-with-sagemaker-ecs-and-ecr/) - external link
 * ONNX Runtime
   * [ONNX Runtime Tutorials](https://onnxruntime.ai/docs/tutorials/)
