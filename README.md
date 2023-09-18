@@ -107,6 +107,6 @@ Tutorials demonstrating how to use ONNX in practice for varied scenarios across 
 
 ## Contributing
 
-We welcome improvements to the convertor tools and contributions of new ONNX bindings. Check out [contributor guide](https://github.com/onnx/onnx/blob/main/docs/CONTRIBUTING.md) to get started.
+We welcome improvements to the convertor tools and contributions of new ONNX bindings. Check out [contributor guide](https://github.com/onnx/onnx/blob/main/CONTRIBUTING.md) to get started.
 
 Use ONNX for something cool? Send the tutorial to this repo by submitting a PR.
