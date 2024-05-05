@@ -7,7 +7,8 @@
 
 ## Getting ONNX models
 
-* Pre-trained models: Many pre-trained ONNX models are provided for common scenarios in the [ONNX Model Zoo](https://github.com/onnx/models).
+* Pre-trained models (validated): Many pre-trained ONNX models are provided for common scenarios in the [ONNX Model Zoo](https://github.com/onnx/models/tree/main/validated)
+* Pre-trained models (non-validated): Many pre-trained ONNX models are provided for common scenarios in the [ONNX Model Zoo](https://github.com/onnx/models).
 * Services: Customized ONNX models are generated for your data by cloud based services (see below)
 * Convert models from various frameworks (see below)
 
