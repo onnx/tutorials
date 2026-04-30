@@ -27,8 +27,46 @@ https://www.tensorflow.org/get_started/mnist/pros
 
 import os
 import shutil
-import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
+
+import numpy as np
+import tensorflow.compat.v1 as tf
+
+tf.disable_v2_behavior()
+
+
+class _MnistSplit:
+    def __init__(self, images, labels):
+        self.images = images.reshape([-1, 784]).astype(np.float32) / 255.0
+        self.labels = labels.astype(np.int64)
+        self._index = 0
+
+    def next_batch(self, batch_size):
+        start = self._index
+        self._index += batch_size
+        if self._index > len(self.images):
+            indices = np.arange(len(self.images))
+            np.random.shuffle(indices)
+            self.images = self.images[indices]
+            self.labels = self.labels[indices]
+            start = 0
+            self._index = batch_size
+        end = self._index
+        return self.images[start:end], self.labels[start:end]
+
+
+class _MnistData:
+    def __init__(self, train, test):
+        self.train = train
+        self.test = test
+
+
+def read_mnist_data_sets(data_dir):
+    dataset_path = os.path.join(data_dir, "mnist.npz")
+    (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data(
+        path=dataset_path)
+    return _MnistData(
+        _MnistSplit(train_images, train_labels),
+        _MnistSplit(test_images, test_labels))
 
 
 def add(x, y):
@@ -121,7 +159,7 @@ def create_and_train_mnist():
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
     # Import data
     data_dir = r"/tmp/tensorflow/mnist/input_data"
-    mnist = input_data.read_data_sets(data_dir)
+    mnist = read_mnist_data_sets(data_dir)
     # Create the model
     tf.reset_default_graph()
     input_tensor = tf.placeholder(tf.float32, [None, 784], name="input")
@@ -178,8 +216,8 @@ def save_model_to_frozen_proto(sess):
 
 def save_model_to_saved_model(sess, input_tensor, output_tensor):
     print('save model to saved_model')
-    from tensorflow.saved_model import simple_save
     save_path = r"./output/saved_model"
     if os.path.exists(save_path):
         shutil.rmtree(save_path)
-    simple_save(sess, save_path, {input_tensor.name: input_tensor}, {output_tensor.name: output_tensor})
+    tf.saved_model.simple_save(
+        sess, save_path, {input_tensor.name: input_tensor}, {output_tensor.name: output_tensor})
