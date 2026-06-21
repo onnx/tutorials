@@ -29,14 +29,51 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
+import os
 import sys
 import tempfile
 
-from tensorflow.examples.tutorials.mnist import input_data
+import numpy as np
+import tensorflow.compat.v1 as tf
 
-import tensorflow as tf
+tf.disable_v2_behavior()
 
 FLAGS = None
+
+
+class _MnistSplit:
+    def __init__(self, images, labels):
+        self.images = images.reshape([-1, 784]).astype(np.float32) / 255.0
+        self.labels = labels.astype(np.int64)
+        self._index = 0
+
+    def next_batch(self, batch_size):
+        start = self._index
+        self._index += batch_size
+        if self._index > len(self.images):
+            indices = np.arange(len(self.images))
+            np.random.shuffle(indices)
+            self.images = self.images[indices]
+            self.labels = self.labels[indices]
+            start = 0
+            self._index = batch_size
+        end = self._index
+        return self.images[start:end], self.labels[start:end]
+
+
+class _MnistData:
+    def __init__(self, train, test):
+        self.train = train
+        self.test = test
+
+
+def read_mnist_data_sets(data_dir):
+    dataset_path = os.path.join(data_dir, "mnist.npz")
+    (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data(
+        path=dataset_path)
+    return _MnistData(
+        _MnistSplit(train_images, train_labels),
+        _MnistSplit(test_images, test_labels))
 
 
 def add(x, y):
@@ -137,7 +174,7 @@ def bias_variable(shape):
 
 def main(_):
     # Import data
-    mnist = input_data.read_data_sets(FLAGS.data_dir)
+    mnist = read_mnist_data_sets(FLAGS.data_dir)
 
     # Create the model
     x = tf.placeholder(tf.float32, [None, 784])
